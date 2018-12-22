@@ -5,7 +5,7 @@
           return parser.parseFromString(wellFormedXmlStr, 'text/xml');
       }
 
-      static setHtmlFieldsForXml(mappings, xml) {
+      static setHtmlFieldsForXml(addGroup, addEvent, addLevel, mappings, xml) {
         // Settings tag
         const settings = this.getSelectorValuesMapForTagName(mappings, xml, 'Settings');
         this.setHtmlFieldsForMap('.campaign-options-container', settings);
