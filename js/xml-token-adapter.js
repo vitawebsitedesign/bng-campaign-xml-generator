@@ -1,7 +1,7 @@
 class XmlTokenAdapter {
   static getShareUrl(xml) {
-    const utf8 = forceStrToUtf8(xml);
-    const token = xmlToShareableToken(xml);
+    const utf8 = this.forceStrToUtf8(xml);
+    const token = this.xmlToShareableToken(xml);
     const viewablePenUrl = window.location.href
       .replace('s.codepen', 'codepen')
       .replace('fullpage', 'full');
@@ -13,7 +13,7 @@ class XmlTokenAdapter {
     return btoa(escape(xml));
   }
   
-  static shareableTokenToXml(str) {
+  static shareableTokenToXml(token) {
     return unescape(atob(token));
   }
   

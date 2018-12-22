@@ -22,8 +22,8 @@ class StringUtil {
   static getCustomCampaignFilePath(campaignName) {
     const folder = `C:\\...\\BallisticNG\\UserData\\Custom Campaigns`;
     const fileName = this.slugify(campaignName);
-    const fileWithExtension = `${slugifiedCampaignName}.xml`;
-    const path = `${folder}\\${fileWithExtension}`;
+    const fileWithExtension = `${fileName}.xml`;
+    return `${folder}\\${fileWithExtension}`;
   }
 
   static capitaliseFirstLetter(bool) {
