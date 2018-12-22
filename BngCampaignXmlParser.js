@@ -86,5 +86,3 @@ class BngCampaignXmlParser {
         return null;
     }
 }
-    
-export default BngCampaignXmlParser;
