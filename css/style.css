@@ -1,3 +1,58 @@
+body {
+  background-color: white;
+  font-color: #555;
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 7%;
+}
+header {
+  background: linear-gradient(45deg,#043751 0%,#104f71 30%,#1c809d 80%,#1c809d 100%);
+  position: relative;
+}
+header .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 0.72rem;
+}
+header .btn .fas {
+  margin-right: 1.2%;
+}
+h1, h2 {
+  color: rgb(49, 49, 49);
+  margin-bottom: 0;
+  font-weight: 300;
+  padding: 2% 0;
+}
+h2, h3 {
+  padding: 1% 0;
+}
+h1 {
+  border-bottom: 1px solid rgb(240, 240, 243);
+  border-top: 1px solid rgb(240, 240, 243);
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1rem;  
+}
+input, select {
+  padding: 2%;
+  width: 100%;
+}
+textarea {
+  resize: none;
+}
+video {
+	height: 10vh;
+}
+*[readonly] {
+  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #fbfbfb 10px, #fbfbfb 20px);
+  border: 1px solid rgb(169, 169, 169);
+  color: grey;
+}
+
 .editor {
   position: relative;
   z-index: 100;
@@ -9,7 +64,7 @@
   z-index: 10;
 }
 .logo-container {
-  bottom: -5px;
+  bottom: -1px;
   color: white;
   font-size: 1.2rem;
   left: 0;
@@ -53,6 +108,9 @@
   font-size: 1.2rem;
   font-weight: 300;
   margin-bottom: 0;
+}
+.video, .row-fallback-texture {
+	display: none;
 }
 #groups {
   height: 50vh;
@@ -114,7 +172,7 @@
   transition: opacity 0.25s ease-out; 
 }
 .vignette-backdrop {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 0%,#000000 100%,#000000 100%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%,#000000 100%,#000000 100%);
   height: 100vh;
   left: 0;
   padding: 4%;
@@ -135,4 +193,45 @@
 .loading-campaign-templates-from-cloud {
   animation: spin 1.4s infinite linear;
   font-size: 1.4rem;
+}
+.sample-video {
+	border: 1px solid grey;
+	display: inline-block;
+	position: relative;
+	margin-top: 0;
+	transition: margin-top .25s ease-out;
+	vertical-align: top;
+}
+.sample-video:hover {
+	margin-top: 0.4vh;
+}
+
+@keyframes resetoffset {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0%;
+  }
+}
+@keyframes slideup {
+  from {
+    bottom: -3vh;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1;
+  }
 }

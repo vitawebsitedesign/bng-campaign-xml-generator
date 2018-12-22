@@ -1,0 +1,594 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<section id="templates">
+  <article class="group" class="col-12">
+    <h1>
+      <i class="fas fa-box-open"></i>
+      Event group <span class="group-num"></span>
+    </h1>
+    <section class="events">
+    </section>
+    <button class="btn-add-event btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Adds a new event to this group. An event usually contains multiple tracks played in succession (kinda like a mini tournament).">+Event</button>	
+  </article>
+
+  <article class="event">
+    <h2>
+      &quot;<span class="event-name-title"></span>&quot;&nbsp;event
+      <button class="float-right btn btn-sm btn-primary btn-toggle-all-options" data-toggle="tooltip" data-placement="bottom" data-state="0" title="hide/show all event sections"><i class="far fa-eye-slash"></i></button>
+    </h2>
+
+    <article>
+      <h3>
+        <i class="fas fa-cog"></i>
+        Basic options
+        <button class="float-right btn btn-sm btn-primary btn-toggle-options" data-toggle="tooltip" data-placement="bottom" title="hide/show section"><i class="far fa-eye"></i></button>
+      </h3>
+      <div class="toggleable-item-container">
+        <div class="toggleable-item" style="display: none">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  Event name
+                </td>
+                <td data-toggle="tooltip" data-placement="bottom" title="The event name appears as a list item when viewing this custom campaign">
+                  <input type="text" class="event-name" placeholder="Event name" value="Event 1" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Speed class
+                </td>
+                <td data-toggle="tooltip" data-placement="bottom" title="BNG speed class for an event">
+                  <select class="speed-class">
+                    <option value="Toxic">Toxic</option>
+                    <option value="Apex">Apex</option>
+                    <option value="Halberd">Halberd</option>
+                    <option value="Spectre" selected>Spectre</option>
+                    <option value="Zen">Zen</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>
+        <i class="fas fa-cog"></i>
+        Intermediate options
+        <button class="float-right btn btn-sm btn-primary btn-toggle-options" data-toggle="tooltip" data-placement="bottom" title="hide/show section"><i class="far fa-eye"></i></button>
+      </h3>
+      <div class="toggleable-item" style="display: none">
+        <table class="table">
+          <tbody>
+
+            <tr>
+              <td>
+                Game mode
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="BNG game mode to use for all tracks in this event. Changing this will automatically update the award thresholds below">
+                <input type="text" list="gamemodes" placeholder="Gamemode case-sensitive, e.g.: Race" class="game-mode" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bronze medal threshold
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Race, this would be the finishing position required to achieve this medal">
+                <input type="number" class="bronze-value" value="4" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Silver medal threshold
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Eliminator, this would be the amount of kills required to achieve this medal">
+                <input type="number" class="silver-value" value="3" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Gold medal threshold
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Time Trial, this would be the race time (in seconds) required to achieve this medal">
+                <input type="number" class="gold-value" value="2" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Platinum medal threshold
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Knockout, this would be the finishing position required to achieve this medal">
+                <input type="number" class="platinum-value" value="1" min="0" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article>
+      <h3>
+        <i class="fas fa-cog"></i>
+        Advanced options
+        <button class="float-right btn btn-sm btn-primary btn-toggle-options" data-toggle="tooltip" data-placement="bottom" title="hide/show section"><i class="far fa-eye"></i></button>
+      </h3>
+      <div class="toggleable-item" style="display: none">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                Points required to unlock this event group
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="Earning event medals gives the player points, which unlock subsequent event groups. 0 means that this group will be unlocked/playable from the start">
+                <input type="number" class="points-to-unlock" min="0" value="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                AI difficulty
+              </td>
+              <td>
+                <select class="difficulty">
+                  <option value="Novice">Novice</option>
+                  <option value="Experienced">Experienced</option>
+                  <option value="Expert">Expert</option>
+                  <option value="Elite" selected>Elite</option>
+                  <option value="Hardcore">Hardcore</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                AI ships
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="Number of AI ships to include for this event	(max 15)">
+                <input type="number" class="number-of-ai" min="0" max="15" value="15" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Weapons
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="Enable/disable weapons for this event">
+                <select class="weapons">
+                  <option value="True">True</option>
+                  <option value="False">False</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Ship handling
+              </td>
+              <td>
+                <select class="modern-physics">
+                  <option value="True">Wipeout Omega Collection</option>
+                  <option value="False" selected>Wipeout 2097</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td data-toggle="tooltip" data-placement="bottom" title="Extra damage and disabled pitlanes">
+                Hardcore mode
+              </td>
+              <td>
+                <select class="hardcore">
+                  <option value="True">Yes</option>
+                  <option value="False" selected>No</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mirror all tracks in this event
+              </td>
+              <td>
+                <select class="mirror">
+                  <option value="True">Yes</option>
+                  <option value="False" selected>No</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Easy score
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="The number of points awarded when completing this event on easy difficulty">
+                <input type="number" class="easy-score" value="1" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Hard score
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="The number of points awarded when completing this event on hard difficulty">
+                <input type="number" class="hard-score" value="1" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Extra laps
+              </td>
+              <td>
+                <input type="number" class="extra-laps" value="0" min="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Custom AI speed multiplier
+              </td>
+              <td>
+                <input type="number" class="speed-mult" value="1" min="0" step="0.1" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Use the above custom AI speed multiplier
+              </td>
+              <td>
+                <select class="use-speed-mult">
+                  <option value="True">Yes</option>
+                  <option value="False" selected>No</option>
+                </select>
+              </td>
+						</tr>
+            <tr>
+              <td>
+                Force player ship
+              </td>
+              <td>
+                <select class="force-player-ship">
+                  <option value="True">Yes</option>
+                  <option value="False" selected>No</option>
+                </select>
+              </td>
+            </tr>                  
+            <tr>
+              <td>
+                Force AI ships to be same as player ship
+              </td>
+              <td>
+                <select class="force-ai-ship">
+                  <option value="True">Yes</option>
+                  <option value="False" selected>No</option>
+                </select>
+              </td>
+						</tr>
+            <tr>
+              <td>
+                Forced ship (only used if 1 of the above 2 options are set to &quot;Yes&quot;)
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="What ships the player can select for this event">
+                <select class="player-ship">
+                  <option value="Gtek" selected>Gtek</option>
+                  <option value="Wyvern">Wyvern</option>
+                  <option value="Hyperion">Hyperion</option>
+                  <option value="Scorpio">Scorpio</option>
+                  <option value="Omnicom">Omnicom</option>
+                  <option value="Diavolt">Diavolt</option>
+                  <option value="Nexus">Nexus</option>
+                  <option value="Tenrai">Tenrai</option>
+                  <option value="Gtekdrag">Gtekdrag</option>
+                  <option value="Wyverndrag">Wyverndrag</option>
+                  <option value="Hyperiondrag">Hyperiondrag</option>
+                  <option value="Scorpiodrag">Scorpiodrag</option>
+                  <option value="Omnicomdrag">Omnicomdrag</option>
+                  <option value="Diavoltdrag">Diavoltdrag</option>
+                  <option value="Nexusdrag">Nexusdrag</option>
+                  <option value="Tenraidrag">Tenraidrag</option>
+                  <option value="Gtekdrift">Gtekdrift</option>
+                  <option value="Wyverndrift">Wyverndrift</option>
+                  <option value="Hyperiondrift">Hyperiondrift</option>
+                  <option value="Scorpiodrift">Scorpiodrift</option>
+                  <option value="Omnicomdrift">Omnicomdrift</option>
+                  <option value="Diavoltdrift">Diavoltdrift</option>
+                  <option value="Nexusdrift">Nexusdrift</option>
+                  <option value="Tenraidrift">Tenraidrift</option>
+                  <option value="Protonic">Protonic</option>
+                  <option value="Nx2000">Nx2000</option>
+                  <option value="Mtechp1">Mtechp1</option>
+                  <option value="Barracuda">Barracuda</option>
+                  <option value="Caliburn">Caliburn</option>
+                  <option value="Zoneship">Zoneship</option>
+                  <option value="PrecisionShip">PrecisionShip</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article>
+      <h3>
+        <i class="fas fa-cog"></i>
+        Tracks
+        <button class="float-right btn btn-sm btn-primary btn-toggle-options" data-toggle="tooltip" data-placement="bottom" title="hide/show section"><i class="far fa-eye"></i></button>
+      </h3>
+      <div class="toggleable-item-container">
+        <div class="levels toggleable-item" style="display: none">
+          <button class="btn btn-primary btn-sm btn-add-level" data-toggle="tooltip" data-placement="bottom" title="Adds a new track to this event">+</button>
+        </div>
+      </div>
+    </article>
+  </article>
+  
+  <div class="col-5 level">
+    <input type="text" list="vanilla-tracks" class="track" placeholder="Track name (case sensitive), e.g.: Luna, Cairodrome" data-toggle="tooltip" data-placement="bottom" title="If you see a white rectangle on the BNG campaign event screen, then ensure steam is in ONLINE mode, and that you are subscribed to the custom track. Otherwise, the name/case of the track name is incorrect (e.g.: cairodrome instead of Cairodrome)." />
+    <button class="btn btn-primary btn-sm btn-rm-level">x</button>
+  </div>
+  
+  <section class="text-field-dropdown-options">
+    <datalist id="gamemodes">
+      <option value="Race">Race</option>
+      <option value="Time Trial">Time Trial</option>
+      <option value="Speed Lap">Speed Lap</option>
+      <option value="Survival">Survival</option>
+      <option value="Knockout">Knockout</option>
+      <option value="Eliminator">Eliminator</option>
+    </datalist>
+
+    <datalist id="vanilla-tracks">
+      <!-- vanilla tracks -->
+      <option value="Cassandra">Tested &amp; working</option>
+      <option value="Zephyr Ridge">Tested &amp; working</option>
+      <option value="Harpstone">Tested &amp; working</option>
+      <option value="Aciknovae">Tested &amp; working</option>
+      <option value="Nova Split">Tested &amp; working</option>
+      <option value="Luna">Tested &amp; working</option>
+      <option value="Dover">Tested &amp; working</option>
+      <option value="Ishtar Citadel">Tested &amp; working</option>
+      <option value="Arrivon XI">Tested &amp; working</option>
+      <option value="Omega Harbour">Tested &amp; working</option>
+      <option value="Utah Project">Tested &amp; working</option>
+      <option value="Marina Rush">Tested &amp; working</option>
+      <option value="Hydrome Bed">Tested &amp; working</option>
+      <option value="Arrivon Peak">Tested &amp; working</option>
+
+      <!-- custom tracks-->
+      <option value="Abisko">Tested &amp; working</option>
+      <option value="Aerodive">Tested &amp; working</option>
+      <option value="Annapurna">Tested &amp; working</option>
+      <option value="Beltane">Tested &amp; working</option>
+      <option value="blood_moon">Unable to load</option>
+      <option value="bngl-wipeoutzone">Tested &amp; working</option>
+      <option value="BoneZone">Tested &amp; working</option>
+      <option value="breolia cliffs">Tested &amp; working</option>
+      <option value="Brigadoon">Tested &amp; working</option>
+      <option value="broadcasting base">Unable to load</option>
+      <option value="Cairodrome">Tested &amp; working</option>
+      <option value="Cobbledark">Tested &amp; working</option>
+      <option value="cobblerdark">Tested &amp; working</option>
+      <option value="Dione IV">Tested &amp; working</option>
+      <option value="Dyroness">Tested &amp; working</option>
+      <option value="Faradome">Tested &amp; working</option>
+      <option value="Fort Tristan Full">Tested &amp; working</option>
+      <option value="Fort Tristan Short">Tested &amp; working</option>
+      <option value="gcn - mushroom bridge">Unable to load</option>
+      <option value="Goldbridge">Tested &amp; working</option>
+      <option value="GT-Deep Forest">Tested &amp; working</option>
+      <option value="GT-Grand Valley East Section">Tested &amp; working</option>
+      <option value="GT-Grand Valley Speedway">Tested &amp; working</option>
+      <option value="GT-Special Stage Route 5">Tested &amp; working</option>
+      <option value="Harvest Bastion">Tested &amp; working</option>
+      <option value="Infinity Spear">Tested &amp; working</option>
+      <option value="interlagos futuristic">Unable to load</option>
+      <option value="Kamanneq">Tested &amp; working</option>
+      <option value="Kanlaon Peak">Tested &amp; working</option>
+      <option value="Klies Bridge">Tested &amp; working</option>
+      <option value="Lion's Den">Tested &amp; working</option>
+      <option value="Machaon II">Tested &amp; working</option>
+      <option value="M-Aero">Tested &amp; working</option>
+      <option value="Mega Expressway">Tested &amp; working</option>
+      <option value="mountain sunset">Unable to load</option>
+      <option value="mtpisang">Unable to load</option>
+      <option value="mtpisang_night">Unable to load</option>
+      <option value="New Broadcasting Base">Tested &amp; working</option>
+      <option value="New Mountain Complex">Tested &amp; working</option>
+      <option value="Nitia Descent">Tested &amp; working</option>
+      <option value="noob dimention">Unable to load</option>
+      <option value="Parashant">Tested &amp; working</option>
+      <option value="Pont des Anges">Tested &amp; working</option>
+      <option value="Qoron IV">Tested &amp; working</option>
+      <option value="Red Bull Drag">Tested &amp; working</option>
+      <option value="Red Bull Drift">Tested &amp; working</option>
+      <option value="Resort Island">Tested &amp; working</option>
+      <option value="Sagarmatha (Remake)">Tested &amp; working</option>
+      <option value="Saint Caomhan's Point">Tested &amp; working</option>
+      <option value="Seaside Route 765 R">Tested &amp; working</option>
+      <option value="Seaside Route 765">Tested &amp; working</option>
+      <option value="selvaverde">Unable to load</option>
+      <option value="Sokana">Tested &amp; working</option>
+      <option value="sol 0">Tested &amp; working</option>
+      <option value="Stearinlys">Tested &amp; working</option>
+      <option value="Strelka Node">Tested &amp; working</option>
+      <option value="Tamoanchan">Tested &amp; working</option>
+      <option value="Ten Bears Point">Tested &amp; working</option>
+      <option value="terafumos">Tested &amp; working</option>
+      <option value="utahcz">Unable to load</option>
+      <option value="Velocitar">Tested &amp; working</option>
+      <option value="Vostrukha I">Tested &amp; working</option>
+      <option value="Vulcan's Forge">Tested &amp; working</option>
+      <option value="Wellhead Speedway">Tested &amp; working</option>
+      <option value="Wonder of Asia new colour 10">Tested &amp; working</option>
+    </datalist>
+  </section>
+  
+  <button class="col-12 btn btn-primary btn-open-campaign" data-url="https://gitcdn.xyz/repo/vitawebsitedesign/8609996e29eec136b7658dd37f8448c2/raw/d017ea68abf8b9b21b93985aef948da88c6f714e/new.json" data-toggle="tooltip" data-placement="right" title="">New campaign</button>
+</section>
+
+<div class="container-fluid editor">
+  <header class="row">
+    <div class="logo-container">
+      <i class="fas fa-crow"></i>
+    </div>
+    <h3 class="col-12 custom-campaign-xml-generator-heading">
+      Campaign XML Generator
+    </h3>
+    <nav class="col-12 header-nav">
+      <a href="https://ballisticng.gamepedia.com/Custom_Campaign_XML#content_references" target="_blank">
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Opens the XML wiki page in a new tab">
+          <i class="fas fa-question"></i>
+          Help
+        </button>
+      </a>
+      
+      <a href="https://steamcommunity.com/workshop/browse/?appid=473770&requiredtags[]=Track" target="_blank">
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Opens the Steam workshop track page in a new tab">
+          <i class="fas fa-search"></i>
+          View workshop tracks
+        </button>
+      </a>
+
+      <button class="btn btn-primary btn-share" data-toggle="modal" data-target="#share-modal">
+        <i class="fas fa-key"></i>
+        Share
+      </button>
+
+      <button class="btn btn-primary btn-randomize-website-colour" data-toggle="tooltip" data-placement="bottom" title="Please use this if you have difficulty using this website due to colourblindness">
+        <i class="fas fa-broom"></i>
+        Change website colour
+      </button>
+    </nav>
+  </header>
+  <div class="row campaign-container">
+    <div class="col-6">
+      <article class="campaign-options-container">
+        <h1>Campaign options</h1>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                Campaign name
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="This is what's shown on the campaign menu, with a (custom) prefix e.g.: '(custom) My Campaign'">
+                <input type="text" id="campaign-name" value="My Awesome Campaign" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Allow Barracuda ship
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="Whether the player can play the Barracuda ship in this campaign">
+                <select class="barracuda-allowed">
+                  <option value="True">Yes</option>
+                  <option value="False">No</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td data-toggle="tooltip" data-placement="bottom" title="This is an optional video shown when your campaign is selected in the menu">
+                Sample campaign preview vids (optional)
+              </td>
+              <td>
+								<div class="sample-video">
+									<a href="https://www.dropbox.com/s/q9tgdh56yy1iupg/custom-campaign-video.mp4?dl=1" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Left-click here to directly download the HQ version of this Dropbox video (6.4 MB). You must put it in your custom campaign folder to get it to show on the campaign menu.">
+										<video autoplay muted loop>
+											<source src="https://i.imgur.com/XOol4gH.mp4" type="video/mp4" />
+										</video>
+									</a>
+								</div>
+								<div class="sample-video">
+									<a href="https://www.dropbox.com/s/dcfabmb8b3y4fnv/custom-campaign-video.mp4?dl=1" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Left-click here to directly download the HQ version of this Dropbox video (6.1 MB). You must put it in your custom campaign folder to get it to show on the campaign menu.">
+										<video autoplay muted loop>
+											<source src="https://i.imgur.com/X4iLuIo.mp4" type="video/mp4" />
+										</video>
+									</a>
+								</div>
+								<div class="sample-video">
+									<a href="https://www.dropbox.com/s/9u6yk2nxi0j1myb/custom-campaign-video.mp4?dl=1" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Left-click here to directly download the HQ version of this Dropbox video (7.2 MB). You must put it in your custom campaign folder to get it to show on the campaign menu.">
+										<video autoplay muted loop>
+											<source src="https://i.imgur.com/UVtqfSu.mp4" type="video/mp4" />
+										</video>
+									</a>
+								</div>
+								<input type="text" class="video" placeholder="You can leave this blank. Filenames must include extension (e.g.: my-video.mp4)" readonly />
+              </td>
+            </tr>
+            <tr class="row-fallback-texture">
+              <td>
+                Optional campaign picture
+              </td>
+              <td data-toggle="tooltip" data-placement="bottom" title="The filename of a fancy preview picture to show when the video file doesnt exist.">
+								<input type="text" class="fallback-texture" placeholder="You can leave this blank. Filenames must include extension (e.g.: my-video.mp4)" readonly />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="groups">
+      </article>
+      <button class="btn btn-primary btn-add-group" data-toggle="tooltip" data-placement="bottom" title="Adds a new event group to this campaign. The 1st group is usually unlocked by default, with subsequent groups requiring medals to unlock.">+Group</button>
+    </div>
+
+    <section class="col-6 xml-container">
+      <input type="text" id="campaign-xml-filename" data-toggle="tooltip" data-placement="bottom" title="When saving the below text with Notepad, ensure you select 'All Files' in the 'Save as type' dropdown" readonly />
+      <textarea id="campaign-xml" data-toggle="tooltip" data-placement="top" title="You dont need to understand this alien gibberish (lucky you!)" readonly>
+      </textarea>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="share-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2>
+          <i class="fas fa-key"></i>
+          Shareable url:
+        </h2>
+        <input type="text" class="col-12 share-token" readonly />
+        <p>You can send this URL to anyone to quickly share your awesome custom campaign!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          <i class="fas fa-check"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid d-flex popup-load vignette-backdrop">
+  <div class="row text-center">
+    <div class="col open-campaign-container">
+      <h1>
+        <i class="fas fa-cloud"></i>
+        Load template
+      </h1>
+      <i class="fas fa-circle-notch loading-campaign-templates-from-cloud"></i>
+    </div>
+    <div class="col-1 p-3 align-content-center justify-content-center">
+      OR
+    </div>
+    <div class="col">
+      <h1>
+        <i class="fas fa-save"></i>
+        Load xml
+      </h1>
+      <textarea class="col-12 load-raw-xml" placeholder="Paste raw xml here!" data-toggle="tooltip" data-placement="bottom" title="Pasting raw XML here will automatically update the website fields based on custom campaign configurations. This allows you to edit custom campaigns through a user interface instead of manually writing code (which is prone to errors)."></textarea>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="js/bng-campaign-xml-parser.js"></script>
+<script src="js/campaign-list.js"></script>
+<script src="js/xml-token-adapter.js"></script>
+<script src="js/string-util.js"></script>
+<script src="js/main.js"></script>
