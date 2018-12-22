@@ -1,11 +1,11 @@
   class BngCampaignXmlParser {
-      convertBngCampaignXmlToXmlDoc(str) {
+      static convertBngCampaignXmlToXmlDoc(str) {
           const parser = new DOMParser();
           const wellFormedXmlStr = `<root>${str}</root>`;
           return parser.parseFromString(wellFormedXmlStr, 'text/xml');
       }
 
-      setHtmlFieldsForXml(mappings, xml) {
+      static setHtmlFieldsForXml(mappings, xml) {
         // Settings tag
         const settings = this.getSelectorValuesMapForTagName(mappings, xml, 'Settings');
         this.setHtmlFieldsForMap('.campaign-options-container', settings);
@@ -58,14 +58,14 @@
         }
       }
 
-      setHtmlFieldsForMap(parentSelector, mappingsForXmlTag) {
+      static setHtmlFieldsForMap(parentSelector, mappingsForXmlTag) {
         for (let mapping of mappingsForXmlTag) {
           const parent = $(`.campaign-container ${parentSelector}`).last();
           parent.find(mapping.selector).val(mapping.val);
         }
       }
 
-      getSelectorValuesMapForTagName(mappings, xml, tagName) {
+      static getSelectorValuesMapForTagName(mappings, xml, tagName) {
           return mappings.filter(m => m.xml.tag.toLowerCase() === tagName.toLowerCase())
               .map(m => ({
                   selector: m.html.selector,
@@ -73,7 +73,7 @@
               }));
       }
 
-      getSelectorValuesMapForTag(mappings, xml, tagName, tag) {
+      static getSelectorValuesMapForTag(mappings, xml, tagName, tag) {
           return mappings.filter(m => m.xml.tag.toLowerCase() === tagName.toLowerCase())
               .map(m => ({
                   selector: m.html.selector,
@@ -81,7 +81,7 @@
               }));
       }
 
-      getXmlAttr(xml, tagName, attrName) {
+      static getXmlAttr(xml, tagName, attrName) {
           const tag = xml.getElementsByTagName(tagName)[0];
           if (tag) {
               const attrVal = tag.getAttribute(attrName);
