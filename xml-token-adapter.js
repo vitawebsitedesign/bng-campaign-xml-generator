@@ -1,12 +1,12 @@
 class XmlTokenAdapter {
   getShareUrl(xml) {
     const utf8 = forceStrToUtf8(xml);
-    const hash = xmlToShareableToken(xml);
+    const token = xmlToShareableToken(xml);
     const viewablePenUrl = window.location.href
       .replace('s.codepen', 'codepen')
       .replace('fullpage', 'full');
 
-    return `${viewablePenUrl}?token=${hash}`;
+    return `${viewablePenUrl}?token=${token}`;
   }
 
   xmlToShareableToken(xml) {
