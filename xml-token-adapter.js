@@ -1,5 +1,5 @@
 class XmlTokenAdapter {
-  getShareUrl(xml) {
+  static getShareUrl(xml) {
     const utf8 = forceStrToUtf8(xml);
     const token = xmlToShareableToken(xml);
     const viewablePenUrl = window.location.href
@@ -9,19 +9,19 @@ class XmlTokenAdapter {
     return `${viewablePenUrl}?token=${token}`;
   }
 
-  xmlToShareableToken(xml) {
+  static xmlToShareableToken(xml) {
     return btoa(escape(xml));
   }
   
-  shareableTokenToXml(str) {
+  static shareableTokenToXml(str) {
     return unescape(atob(token));
   }
   
-  forceStrToUtf8(str) {
+  static forceStrToUtf8(str) {
     return JSON.parse(JSON.stringify(str));
   }
   
-  getUrlParam(param) {
+  static getUrlParam(param) {
     return new URL(window.location.href).searchParams.get(param);
   }
 }
