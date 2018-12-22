@@ -9,8 +9,6 @@
         // Settings tag
         const settings = this.getSelectorValuesMapForTagName(mappings, xml, 'Settings');
         this.setHtmlFieldsForMap('.campaign-options-container', settings);
-        const campaignName = settings.filter(m => m.selector.toLowerCase() === '#campaign-name')[0].val;
-        setCampaignFilename(slugify(campaignName));
 
         // For ea group
         const groupTags = xml.getElementsByTagName('Group');
