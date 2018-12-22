@@ -1,6 +1,7 @@
 class CampaignList {
-	get() {
-		return [{
+	static get() {
+		return [
+      {
 				"name": "New",
 				"url": "https://gist.githubusercontent.com/vitawebsitedesign/59a3a0c815c0fcfa07e6ae2c664464a9/raw/new-campaign.xml"
 			},
