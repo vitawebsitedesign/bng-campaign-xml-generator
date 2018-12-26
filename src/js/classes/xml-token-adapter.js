@@ -25,3 +25,5 @@ class XmlTokenAdapter {
     return new URL(window.location.href).searchParams.get(param);
   }
 }
+
+export default XmlTokenAdapter;

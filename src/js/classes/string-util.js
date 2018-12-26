@@ -35,3 +35,5 @@ class StringUtil {
     return str.substr(0, index) + replacement + str.substr(index + replacement.length);
   }
 }
+
+export default StringUtil;

@@ -32,3 +32,5 @@ class CampaignList {
 		];	
 	}
 }
+
+export default CampaignList;

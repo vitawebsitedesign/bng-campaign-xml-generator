@@ -1,0 +1,27 @@
+{
+  "name": "vitawebsitedesign.bng-campaign-xml-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests": "node node_modules/mocha/bin/mocha",
+    "webpack": "node node_modules/webpack/bin/webpack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitawebsitedesign/bng-campaign-xml-generator.git"
+  },
+  "author": "michael nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitawebsitedesign/bng-campaign-xml-generator/issues"
+  },
+  "homepage": "https://github.com/vitawebsitedesign/bng-campaign-xml-generator#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.6.0",
+    "mocha": "^5.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
+  }
+}

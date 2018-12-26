@@ -1,3 +1,8 @@
+import BngCampaignXmlParser from './classes/bng-campaign-xml-parser';
+import CampaignList from './classes/campaign-list';
+import StringUtil from './classes/string-util';
+import XmlTokenAdapter from './classes/xml-token-adapter';
+
 (function() {
 	const mappingsUrl = 'https://gist.githubusercontent.com/vitawebsitedesign/8609996e29eec136b7658dd37f8448c2/raw/xml-html-mapping-metadata.json';
 	init();
@@ -115,12 +120,12 @@
 	}
   
 	function addTrack(tbody, shouldGenerateXml = true, shouldRemoveDeleteButton = false, shouldRebindControlHandlers = true) {
-		if (!tbody.length) {
+		if (!tbody) {
 			console.warn('Tried to add track to a non-existent table body (is the tbody selector correct?)');
 			return;
 		}
 
-		const clone = $('#templates .new-track-template-container .track').first().clone();
+		const clone = $('#templates .new-track-template-container .track-row').first().clone();
 		if (shouldRemoveDeleteButton === true) {
 			clone.find('.btn-rm-track').remove();
 		}
@@ -168,7 +173,7 @@
 	}
 
 	function removeTrack() {
-		remove($(this).closest('.track'));
+		remove($(this).closest('.track-row'));
 	}
 
 	function removeConfirm(type, ele) {
@@ -263,7 +268,10 @@
 		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultGamemodeAwardValues);
 
 		$(`${campaignOptsContainer} .track`).off('focusin').on('focusin', recordLastTrackValue);
-		$(`${campaignOptsContainer} .track`).off('change').on('change', addTrackTextboxWhenDropdownUsed);
+		$(`${campaignOptsContainer} .track`).off('change').on('change', function(event) {
+			const tbody = $(this).closest('.event').find('.tracks tbody');
+			addTrack(tbody, true, false, true);
+		});
 
 		removeAllTooltips();
 		bindTooltips();
@@ -271,20 +279,6 @@
 
 	function recordLastTrackValue() {
 		$(this).data('last-track-value', $(this).val());
-	}
-
-	function addTrackTextboxWhenDropdownUsed() {
-		const prev = $(this).data('last-track-value');
-		const cur = $(this).val();
-
-		if (prev !== cur) {
-			const trackSelectedFromDropdown = $('#datalist-tracks').find(`option[value='${cur}']`).length;
-
-			if (trackSelectedFromDropdown) {
-				const tbody = $(this).closest('tbody');
-				addTrack(tbody, true);
-			}	
-		}
 	}
 
 	function bindTooltips() {
