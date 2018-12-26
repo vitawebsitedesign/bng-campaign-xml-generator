@@ -12,8 +12,14 @@ header .btn {
   border-bottom-right-radius: 0;
   font-size: 0.72rem;
 }
-header .btn .fas {
-  margin-right: 1.2%;
+nav a {
+  white-space: nowrap;
+}
+nav a span {
+  display: inline;
+}
+nav a .fas, nav a .fab {
+  margin-right: 0.3rem;
 }
 h1, h2 {
   color: rgb(49, 49, 49);
@@ -47,7 +53,7 @@ video {
 	height: 10vh;
 }
 *[readonly] {
-  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #fbfbfb 10px, #fbfbfb 20px);
+  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #f3f3f3 10px, #f3f3f3 20px);
   border: 1px solid rgb(169, 169, 169);
   color: grey;
 }
@@ -96,11 +102,14 @@ video {
   position: relative;
   z-index: 100;
 }
-.campaign-container table, .level input {
+.campaign-container table, .track input {
   font-size: 0.88rem;
 }
 .campaign-container table {
-  background: rgb(249, 249, 249);
+  background: #f4f4f4;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f1f1f1;
 }
 .custom-campaign-xml-generator-heading {
   color: white;
@@ -134,21 +143,15 @@ video {
   right: -100%;
 }
 .xml-container input, .xml-container textarea {
-  border: 1px solid rgb(240, 240, 243);
+  border: 1px solid rgb(230, 230, 230);
 }
 .tooltip-inner {
   text-align: left;
 }
-.level {
-  display: inline-block;
-}
-.level button, .level input {
+.track button, .track input {
   float: left;
 }
-.btn-add-level {
-  vertical-align: top;
-}
-.btn-rm-level {
+.btn-rm-track {
   border-radius: 0;
 }
 .btn-toggle-options {
@@ -194,15 +197,41 @@ video {
   font-size: 1.4rem;
 }
 .sample-video {
-	border: 1px solid grey;
-	display: inline-block;
+	display: inline;
 	position: relative;
 	margin-top: 0;
 	transition: margin-top .25s ease-out;
 	vertical-align: top;
 }
-.sample-video:hover {
-	margin-top: 0.4vh;
+.sample-video img {
+	height: 10vh;
+}
+.btn-add-event {
+	margin-top: 9vh;
+}
+.btn-add-group-container {
+  border: 1px dashed grey;
+  padding: 1rem 0;
+}
+.campaign-container .track td:nth-child(2) {
+  padding-right: 0;
+}
+.btn-toggle-all-options {
+  margin-right: 0.6rem;
+}
+.bng-toasts {
+  color: white;
+  font-variant: all-small-caps;
+  font-weight: bold;
+  width: calc(100% + 30px);
+}
+.bng-toast {
+  background: black;
+  width: 100%;
+}
+.bng-toast-xml-cleanup {
+  display: none;
+  transition: max-height 2s ease-out;
 }
 
 @keyframes resetoffset {
@@ -219,6 +248,16 @@ video {
   }
   to {
     bottom: 0;
+  }
+}
+@keyframes collapseUp {
+  from {
+    background: lightgrey;
+    max-height: 40px;
+  }
+  to {
+    background: black;
+    max-height: 0px;
   }
 }
 @keyframes spin {

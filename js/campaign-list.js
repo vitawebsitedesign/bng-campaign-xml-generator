@@ -1,25 +1,21 @@
 class CampaignList {
 	static get() {
 		return [
-      {
+      			{
 				"name": "New",
 				"url": "https://gist.githubusercontent.com/vitawebsitedesign/59a3a0c815c0fcfa07e6ae2c664464a9/raw/new-campaign.xml"
 			},
 			{
-				"name": "BallisticNG legacy",
-				"url": ""
+				"name": "BallisticNG GT (BNGT)",
+				"url": "https://gist.githubusercontent.com/vitawebsitedesign/f54d7017142bcc1adce0bdeb0bb6dd0f/raw/13e33971550cec24305bdf8d22493e59281e7a80/bngt.xml"
 			},
 			{
-				"name": "Enai Siaion",
-				"url": ""
+				"name": "Enai example",
+				"url": "https://gist.githubusercontent.com/vitawebsitedesign/c2e12177bc7260649803aebf0dde93f0/raw/8d67345db45e5c42aef3e78bdf72db3cf3175cf9/enai.xml"
 			},
 			{
-				"name": "Kyra/Evy/Victor/Shroom",
-				"url": ""
-			},
-			{
-				"name": "Natural landscapes",
-				"url": ""
+				"name": "Kyra/Evy/Victor/Shroom example",
+				"url": "https://gist.githubusercontent.com/vitawebsitedesign/ae3167040e552a749d1556baae3247e2/raw/db725f8d8df8b16068aefb90f33807cfa6df054d/kevs.xml"
 			},
 			{
 				"name": "Wipeout64 race challenges",
