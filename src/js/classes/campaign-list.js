@@ -24,10 +24,6 @@ class CampaignList {
 			{
 				"name": "wipeout64 time trial challenges",
 				"url": "https://gist.githubusercontent.com/vitawebsitedesign/9c5ba20e16ec4dcf54a1477616b22af5/raw/wipeout-64-time-trial-challenges.xml"
-			},
-			{
-				"name": "wipeout64 elimination challenges",
-				"url": "https://gist.githubusercontent.com/vitawebsitedesign/631872cfbba2b2d05a9325023dbbe23a/raw/wipeout-64-eliminator-challenges.xml"
 			}
 		];	
 	}
