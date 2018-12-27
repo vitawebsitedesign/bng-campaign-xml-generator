@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "node node_modules/mocha/bin/mocha",
+    "test": "node node_modules/mocha/bin/mocha",
     "webpack": "node node_modules/webpack/bin/webpack.js"
   },
   "repository": {
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/vitawebsitedesign/bng-campaign-xml-generator#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "copy-webpack-plugin": "^4.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^5.2.0",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "webpack": "^4.28.2",
