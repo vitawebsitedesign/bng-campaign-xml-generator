@@ -98,7 +98,7 @@
                       <td>
                         Game mode
                       </td>
-                      <td data-toggle="tooltip" data-placement="bottom" title="Changing this will automatically update the award thresholds (see next section)">
+                      <td data-toggle="tooltip" data-placement="bottom" title="Changing this will automatically update the award thresholds (see intermediate options below)">
                         <input type="text" list="datalist-gamemodes" placeholder="Gamemode case-sensitive, e.g.: Race" class="game-mode" />
                       </td>
                     </tr>
@@ -121,7 +121,7 @@
                     <td>
                       Bronze medal threshold
                     </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Race, this would be the finishing position required to achieve this medal">
+                    <td data-toggle="tooltip" data-placement="bottom" title="For Race gamemode, this would be the finishing position required to achieve this medal (e.g.: 3)">
                       <input type="number" class="bronze-value" value="4" min="0" />
                     </td>
                   </tr>
@@ -129,7 +129,7 @@
                     <td>
                       Silver medal threshold
                     </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Eliminator, this would be the amount of kills required to achieve this medal">
+                    <td data-toggle="tooltip" data-placement="bottom" title="For Time Trial, this would be the total race time (i.e.: all lap times summed), in seconds, required to achieve this medal (e.g.: 61.52)">
                       <input type="number" class="silver-value" value="3" min="0" />
                     </td>
                   </tr>
@@ -137,7 +137,7 @@
                     <td>
                       Gold medal threshold
                     </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Time Trial, this would be the race time (in seconds) required to achieve this medal">
+                    <td data-toggle="tooltip" data-placement="bottom" title="For Eliminator, this would be the score required to achieve this medal (e.g.: 700)">
                       <input type="number" class="gold-value" value="2" min="0" />
                     </td>
                   </tr>
@@ -145,8 +145,24 @@
                     <td>
                       Platinum medal threshold
                     </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="E.g.: if the event Gamemode is Knockout, this would be the finishing position required to achieve this medal">
+                    <td data-toggle="tooltip" data-placement="bottom" title="For Zone, this would be the zone required to achieve this medal (e.g.: 50)">
                       <input type="number" class="platinum-value" value="1" min="0" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Easy score
+                    </td>
+                    <td data-toggle="tooltip" data-placement="bottom" title="Only applicable for Eliminator events. This is the target score when playing on easy difficulty. This should be equal to the gold medal threshold.">
+                      <input type="number" class="easy-score" value="1" min="0" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Hard score
+                    </td>
+                    <td data-toggle="tooltip" data-placement="bottom" title="Only applicable for Eliminator events. This is the target score when playing on hard difficulty. This should be equal to the platinum medal threshold.">
+                      <input type="number" class="hard-score" value="1" min="0" />
                     </td>
                   </tr>
                 </tbody>
@@ -221,22 +237,6 @@
                         <option value="True">Yes</option>
                         <option value="False" selected>No</option>
                       </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Easy score
-                    </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="The number of points awarded when completing this event on easy difficulty">
-                      <input type="number" class="easy-score" value="1" min="0" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Hard score
-                    </td>
-                    <td data-toggle="tooltip" data-placement="bottom" title="The number of points awarded when completing this event on hard difficulty">
-                      <input type="number" class="hard-score" value="1" min="0" />
                     </td>
                   </tr>
                   <tr>
@@ -350,16 +350,7 @@
           </table>
         </div>
       
-        <section class="text-field-dropdown-options">
-          <datalist id="datalist-gamemodes">
-            <option value="Race">Race</option>
-            <option value="Time Trial">Time Trial</option>
-            <option value="Speed Lap">Speed Lap</option>
-            <option value="Survival">Survival</option>
-            <option value="Knockout">Knockout</option>
-            <option value="Eliminator">Eliminator</option>
-          </datalist>
-      
+        <section class="text-field-dropdown-options">      
           <datalist id="datalist-tracks">
             <!-- vanilla tracks -->
             <option value="Cassandra">Tested &amp; working</option>
@@ -469,9 +460,18 @@
             <option value="Wellhead Speedway">Tested &amp; working</option>
             <option value="Wonder of Asia new colour 10">Tested &amp; working</option>
           </datalist>
+
+          <datalist id="datalist-gamemodes">
+            <option value="Race">Tested &amp; working</option>
+            <option value="Time Trial">Tested &amp; working</option>
+            <option value="Speed Lap">Tested &amp; working</option>
+            <option value="Survival">Tested &amp; working</option>
+            <option value="Knockout">Tested &amp; working</option>
+            <option value="Eliminator">Tested &amp; working</option>
+          </datalist>
         </section>
         
-        <button class="col-12 btn btn-primary btn-open-campaign" data-url="https://gitcdn.xyz/repo/vitawebsitedesign/8609996e29eec136b7658dd37f8448c2/raw/d017ea68abf8b9b21b93985aef948da88c6f714e/new.json" data-toggle="tooltip" data-placement="right" title="">New campaign</button>
+        <button class="col-12 btn btn-primary btn-open-campaign" data-url="" data-toggle="tooltip" data-placement="right" title=""></button>
       </section>
       
       <div class="container-fluid editor">
@@ -584,6 +584,9 @@
               <i class="fas fa-cloud"></i>
               Load template
             </h1>
+            <p>
+              Select "NEW" to get a good grip on how BNG campaigns are created.
+            </p>
             <i class="fas fa-circle-notch loading-campaign-templates-from-cloud"></i>
           </div>
           <div class="col-1 p-3 align-content-center justify-content-center">
@@ -594,7 +597,10 @@
               <i class="fas fa-save"></i>
               Load xml
             </h1>
-            <textarea class="col-12 load-raw-xml" placeholder="Paste raw xml here!" data-toggle="tooltip" data-placement="bottom" title="Pasting raw XML here will allow you to start editing it via this webpage."></textarea>
+            <p>
+              Pasting raw XML here will allow you to start editing it via this webpage.
+            </p>
+            <textarea class="col-12 load-raw-xml" placeholder="Paste raw xml here!"></textarea>
           </div>
         </div>
       </div>

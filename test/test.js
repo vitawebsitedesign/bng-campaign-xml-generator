@@ -5,10 +5,11 @@ const chaiAsPromised = require('chai-as-promised');
 const expect = chai.expect;
 const by = webdriver.By;
 const until = webdriver.until;
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 const parseString = require('xml2js').parseString;
-const targetHtmlPage = 'file:///C:/Users/New/Desktop/d/gitlab-bng-campaign-xml-generator/dist/index.htm';
+const targetHtmlPath = path.join(__dirname, '../dist/index.htm');
+const targetHtmlUri = `file:///${targetHtmlPath}`;
 chai.use(chaiAsPromised);
 chai.should();
 
@@ -16,7 +17,7 @@ describe('bng campaign xml generator', function() {
   this.timeout(100000);
 
   describe('loading templates', function() {
-    beforeEach(() => browser.get(targetHtmlPage));
+    beforeEach(() => browser.get(targetHtmlUri));
 
     it('should be able to load "New" template', async () => {
       const xml = await canLoadXmlFromRemoteTemplatePromise('new');
@@ -40,22 +41,17 @@ describe('bng campaign xml generator', function() {
   
     it('should be able to load "wipeout64 race challenges" template', async () => {
       const xml = await canLoadXmlFromRemoteTemplatePromise('wipeout64 race challenges');
-      expect(xml.length).to.equal(4320);
+      expect(xml.length).to.equal(4372);
     });
   
     it('should be able to load "wipeout64 time trial challenges" template', async () => {
       const xml = await canLoadXmlFromRemoteTemplatePromise('wipeout64 time trial challenges');
-      expect(xml.length).to.equal(4412);
+      expect(xml.length).to.equal(4561);
     });
-  
-    it('should be able to load "wipeout64 elimination challenges" template', async () => {
-      const xml = await canLoadXmlFromRemoteTemplatePromise('wipeout64 elimination challenges');
-      expect(xml.length).to.equal(4380);
-    });  
   });
 
   describe('loading raw xml', function() {
-    beforeEach(() => browser.get(targetHtmlPage));
+    beforeEach(() => browser.get(targetHtmlUri));
 
     it('should be able to load raw xml', async () => {
       const rawXml = await getXmlFromFilePromise('raw-sample.xml');
@@ -66,7 +62,7 @@ describe('bng campaign xml generator', function() {
 
   /* describe('html fields update xml correctly', function() {
     before(async () => {
-      browser.get(targetHtmlPage);
+      browser.get(targetHtmlUri);
       await canLoadXmlFromRemoteTemplatePromise('new');
     });
 
