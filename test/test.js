@@ -56,109 +56,9 @@ describe('bng campaign xml generator', function () {
     it('should be able to load raw xml', async () => {
       const rawXml = await getXmlFromFilePromise('raw-sample.xml');
       const xml = await canLoadRawXmlPromise(rawXml);
-      expect(xml.length).to.equal(16732);
+      expect(xml.length).to.equal(4437);
     });
   });
-
-  /* describe('html fields update xml correctly', function() {
-    before(async () => {
-      browser.get(targetHtmlUri);
-      await canLoadXmlFromRemoteTemplatePromise('new');
-    });
-
-
-    it('campaign name', async () => {
-      const campaignName = 'a wipeout64 campaign that nobody will ever play';
-
-      let prevVal = null;
-      let prevXml = null;
-  
-      browser.findElement(by.id('campaign-name')).getAttribute('value').then(val => {
-        console.log(`prevVal = ${val}`);  // dm
-        prevVal = val;
-      });
-      browser.findElement(by.id('campaign-xml')).getAttribute('value').then(xml => {
-        console.log(`prevXml = ${xml}`);  // dm
-        prevXml = xml;
-      });
-
-      const xmlDoc = await getXmlItemAfterChangingHtmlFieldPromise(prevVal, prevXml, by.id, 'campaign-name', campaignName);
-      const xmlVal = xmlDoc.root.Settings[0].$.Name;
-      expect(xmlVal).to.equal(campaignName);
-    });
-    */
-
-  /* it('allow barracuda ship', async () => {});
-
-  it('sample campaign vids', async () => {});
-
-  it('add event group', async () => {});
-
-  it('add event', async () => {});
-
-  it('add track', async () => {});
-
-  it('event name', async () => {});
-
-  it('speed class', async () => {});
-
-  it('ai difficulty', async () => {});
-
-  it('game mode', async () => {});
-
-  it('bronze medal threshold', async () => {});
-
-  it('silver medal threshold', async () => {});
-
-  it('gold medal threshold', async () => {});
-
-  it('platinum medal threshold', async () => {});
-
-  it('points required to unlock event group', async () => {});
-
-  it('ai ships', async () => {});
-
-  it('weapons', async () => {});
-
-  it('ship handling', async () => {});
-
-  it('hardcore mode', async () => {});
-
-  it('mirror all tracks in this event', async () => {});
-
-  it('easy score', async () => {});
-
-  it('hard score', async () => {});
-
-  it('extra laps', async () => {});
-
-  it('custom ai speed multiplier', async () => {});
-
-  it('use the above custom ai speed multiplier', async () => {});
-
-  it('force player ship', async () => {});
-
-  it('force ai ships to be same as player ship', async () => {});
-
-  it('forced ship (only used if 1 of the above 2 options are set to "Yes")', async () => {});
-
-  it('hide/show all event sections', async () => {});
-
-  it('hide/show tracks', async () => {});
-
-  it('hide/show basic options', async () => {});
-
-  it('hide/show intermediate options', async () => {});
-
-  it('hide/show advanced options', async () => {});
-
-  it('remove track', async () => {});
-
-  it('remove event', async () => {});
-
-  it('remove event group', async () => {});
-});
-*/
 
   after(() => browser.quit());
 });
@@ -258,10 +158,6 @@ function waitUntilTemplateXmlLoadedPromise(prevXml) {
 function waitUntilElementUpdatedPromise(byFunc, htmlSelector, attr, prevVal) {
   return browser.wait(() => {
     return browser.findElement(byFunc(htmlSelector)).getAttribute(attr).then(val => {
-
-      // dm
-      //console.log(`${val} !== ${prevVal}`);
-
       return val !== prevVal;
     });
   }, 10000);
