@@ -1,378 +1,129 @@
-<Settings Name="bnGT" BarracudaAllowed="False" CustomShipsAllowed="True" Video="bngt.mp4" FallbackTexture="" />
-
-<!--Spot Races toxic-->
+<Settings Name="Wipeout 64 Race Challenges" BarracudaAllowed="False" Video="custom-campaign-video.mp4" FallbackTexture="wipeout-64-race-challenges.jpg" />
+	
 <Group PointsToUnlock="0">
-  <Event>
-    <Frontend Name="Spot Race - High Speed Ring" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-High Speed Ring" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Spot Race - Grand Valley East" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-Grand Valley East Section" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Spot Race - Autumn Ring Mini" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-Autumn Ring Mini" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Spot Race - Trial Mountain" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-Trial Mountain" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Spot Race - Deep Forest" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-Deep Forest" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-</Group>
 
-<!--Sunday Cup toxic-->
-<Group PointsToUnlock="0">
-  <Event>
-    <Frontend Name="Sunday Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
-        <Levels>
-          <Level Name="GT-Autumn Ring Mini" />
-		  <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Grand Valley East Section" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Experienced" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 1" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
+				<Levels>
+					<Level Name="Klies Bridge" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Scorpio" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Expert" Count="7" UseSpeedMult="True" SpeedMult="1.3" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="3">
 
-<!--Clubman Cup apex-->
-<Group PointsToUnlock="0">
-  <Event>
-    <Frontend Name="Clubman Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
-        <Levels>
-          <Level Name="GT-Autumn Ring" />
-		  <Level Name="GT-Clubman Stage Route 5" />
-		  <Level Name="GT-Trial Mountain" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 2" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Toxic">
+				<Levels>
+					<Level Name="Dyroness" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="False" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Wyverndrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Elite" Count="7" UseSpeedMult="True" SpeedMult="1.26" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="6">
 
-<!--FF FR 4WD Lightweight Cup apex-->
-<Group PointsToUnlock="18">
-  <Event>
-    <Frontend Name="FF Cars" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
-        <Levels>
-          <Level Name="GT-Deep Forest reverse" />
-		  <Level Name="GT-Grand Valley East Section" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Omnicom" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="FR Cars" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
-        <Levels>
-          <Level Name="GT-Grand Valley East Section Reverse" />
-		  <Level Name="GT-Deep Forest" />
-		  <Level Name="GT-Grand Valley Speedway Reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Novice" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="4WD Cars" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
-        <Levels>
-          <Level Name="GT-Trial Mountain Reverse" />
-		  <Level Name="GT-Grand Valley Speedway" />
-		  <Level Name="GT-Special Stage Route 5 reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Nexus" />
-	  <Ai Difficulty="Experienced" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Lightweight" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
-        <Levels>
-          <Level Name="GT-Autumn Ring Mini Reverse" />
-		  <Level Name="GT-Clubman Stage Route 5" />
-		  <Level Name="GT-Deep Forest reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Gtek" />
-	  <Ai Difficulty="Experienced" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 3" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Spectre">
+				<Levels>
+					<Level Name="Qoron IV" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Diavoltdrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="10">
 
-<!--USvJP UKvJP UKvUS halberd-->
-<Group PointsToUnlock="27">
-  <Event>
-    <Frontend Name="USA vs Japan" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Halberd">
-        <Levels>
-          <Level Name="GT-Trial Mountain Reverse" />
-		  <Level Name="GT-Special Stage Route 5" />
-		  <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Grand Valley East Section Reverse" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="True" ForcedShip="Tenrai" />
-	  <Ai Difficulty="Experienced" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Japan vs UK" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Halberd">
-        <Levels>
-          <Level Name="GT-Trial Mountain Reverse" />
-		  <Level Name="GT-Special Stage Route 5" />
-		  <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Grand Valley East Section Reverse" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="True" ForcedShip="Wyvern" />
-	  <Ai Difficulty="Experienced" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="UK vs US" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Halberd">
-        <Levels>
-          <Level Name="GT-Trial Mountain Reverse" />
-		  <Level Name="GT-Special Stage Route 5" />
-		  <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Grand Valley East Section Reverse" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="True" ForcedShip="Omnicom" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 4" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Apex">
+				<Levels>
+					<Level Name="terafumos" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="False" ForcePlayerShip="True" ForceAiShip="True" ForcedShip="Nx2000" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1.1" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="12">
 
-<!--Gran Turismo Cup spectre-->
-<Group PointsToUnlock="35">
-  <Event>
-    <Frontend Name="Gran Turismo Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Spectre">
-        <Levels>
-          <Level Name="GT-Grand Valley Speedway" />
-		  <Level Name="GT-Deep Forest" />
-		  <Level Name="GT-Special Stage Route 5" />
-		  <Level Name="GT-Trial Mountain" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 5" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
+				<Levels>
+					<Level Name="Sokana" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Tenrai" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Hardcore" Count="3" UseSpeedMult="True" SpeedMult="1.1" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="15">
 
-<!--Gran Turismo World Cup spectre-->
-<Group PointsToUnlock="39">
-  <Event>
-    <Frontend Name="Gran Turismo World Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Spectre">
-        <Levels>
-          <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Trial Mountain" />
-		  <Level Name="GT-Grand Valley Speedway" />
-		  <Level Name="GT-Special Stage Route 5" />
-		  <Level Name="GT-Deep Forest" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Challenge 6" />
+		<Awards BronzeValue="1" SilverValue="1" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
+				<Levels>
+					<Level Name="Machaon II" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="True" ForcedShip="Barracuda" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Hardcore" Count="1" UseSpeedMult="True" SpeedMult="1.14" />
+		</EventSettings>
+	</Event>
+		
 </Group>
+			,
+<Group PointsToUnlock="24">
 
-<!--Megaspeed + Normal car + tuned car Cup zen-->
-<Group PointsToUnlock="42">
-  <Event>
-    <Frontend Name="Megaspeed Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-High Speed Ring" />
-		  <Level Name="GT-Special Stage Route X" />
-		  <Level Name="GT-High Speed Ring Reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="True" ForceAiShip="True" ForcedShip="Barracuda" />
-	  <Ai Difficulty="Elite" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Normal Car Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-Autumn Ring Mini Reverse" />
-		  <Level Name="GT-Grand Valley East Section Reverse" />
-		  <Level Name="GT-Clubman Stage Route 5 Reverse" />
-		  <Level Name="GT-Deep Forest reverse" />
-		  <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Elite" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="Tuned Car Cup" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-High Speed Ring Reverse" />
-		  <Level Name="GT-Grand Valley Speedway Reverse" />
-		  <Level Name="GT-Clubman Stage Route 5 Reverse" />
-		  <Level Name="GT-Autumn Ring Reverse" />
-		  <Level Name="GT-Special Stage Route 11 GT1 Reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="0" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Elite" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
+	<Event>
+		<Frontend Name="Race Platinum Challenge" />
+		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
+		<EventSettings>
+			<Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
+				<Levels>
+					<Level Name="Velocitar" />
+				</Levels>
+			</Mode>
+			<Modifiers Weapons="True" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Diavoltdrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
+		<Ai Difficulty="Hardcore" Count="15" UseSpeedMult="True" SpeedMult="1.14" />
+		</EventSettings>
+	</Event>
+		
 </Group>
-
-<!--Endurance Races zen-->
-<Group PointsToUnlock="48">
-  <Event>
-    <Frontend Name="Grand Valley 300km" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-Grand Valley Speedway" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="55" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="SSR11 All Night Endurance I" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-Special Stage Route 11 GT1" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="25" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-  
-  <Event>
-    <Frontend Name="SSR11 All Night Endurance II" Description="" />
-    <Awards BronzeValue="0" SilverValue="0" GoldValue="0" PlatinumValue="0" EasyScore="0" HardScore="5" />
-    <EventSettings>
-      <Mode Gamemode="Race" ModernPhysics="False" SpeedClass="Zen">
-        <Levels>
-          <Level Name="GT-Special Stage Route 11 GT1 Reverse" />
-        </Levels>
-      </Mode>
-      <Modifiers Hardcore="False" Weapons="True" Mirror="False" ExtraLaps="25" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Scorpio" />
-	  <Ai Difficulty="Expert" Count="5" UseSpeedMult="False" SpeedMult="0" />
-    </EventSettings>
-  </Event>
-</Group>
+			
+		
