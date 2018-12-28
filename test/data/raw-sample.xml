@@ -1,7 +1,5 @@
 <Settings Name="Wipeout 64 Race Challenges" BarracudaAllowed="False" Video="custom-campaign-video.mp4" FallbackTexture="wipeout-64-race-challenges.jpg" />
-	
 <Group PointsToUnlock="0">
-
 	<Event>
 		<Frontend Name="Race Challenge 1" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -12,14 +10,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Scorpio" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Expert" Count="7" UseSpeedMult="True" SpeedMult="1.3" />
+			<Ai Difficulty="Expert" Count="7" UseSpeedMult="True" SpeedMult="1.3" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="3">
-
 	<Event>
 		<Frontend Name="Race Challenge 2" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -30,14 +26,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="False" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Wyverndrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Elite" Count="7" UseSpeedMult="True" SpeedMult="1.26" />
+			<Ai Difficulty="Elite" Count="7" UseSpeedMult="True" SpeedMult="1.26" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="6">
-
 	<Event>
 		<Frontend Name="Race Challenge 3" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -48,14 +42,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Diavoltdrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1" />
+			<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="10">
-
 	<Event>
 		<Frontend Name="Race Challenge 4" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -66,14 +58,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="False" ForcePlayerShip="True" ForceAiShip="True" ForcedShip="Nx2000" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1.1" />
+			<Ai Difficulty="Hardcore" Count="7" UseSpeedMult="True" SpeedMult="1.1" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="12">
-
 	<Event>
 		<Frontend Name="Race Challenge 5" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -84,14 +74,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="False" ForcedShip="Tenrai" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Hardcore" Count="3" UseSpeedMult="True" SpeedMult="1.1" />
+			<Ai Difficulty="Hardcore" Count="3" UseSpeedMult="True" SpeedMult="1.1" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="15">
-
 	<Event>
 		<Frontend Name="Race Challenge 6" />
 		<Awards BronzeValue="1" SilverValue="1" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -102,14 +90,12 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="True" ForcePlayerShip="True" ForceAiShip="True" ForcedShip="Barracuda" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Hardcore" Count="1" UseSpeedMult="True" SpeedMult="1.14" />
+			<Ai Difficulty="Hardcore" Count="1" UseSpeedMult="True" SpeedMult="1.14" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			,
+,
 <Group PointsToUnlock="24">
-
 	<Event>
 		<Frontend Name="Race Platinum Challenge" />
 		<Awards BronzeValue="3" SilverValue="2" GoldValue="1" PlatinumValue="1" EasyScore="1" HardScore="2" />
@@ -120,10 +106,7 @@
 				</Levels>
 			</Mode>
 			<Modifiers Weapons="True" ForcePlayerShip="False" ForceAiShip="False" ForcedShip="Diavoltdrag" Hardcore="True" Mirror="False" ExtraLaps="0" />
-		<Ai Difficulty="Hardcore" Count="15" UseSpeedMult="True" SpeedMult="1.14" />
+			<Ai Difficulty="Hardcore" Count="15" UseSpeedMult="True" SpeedMult="1.14" />
 		</EventSettings>
 	</Event>
-		
 </Group>
-			
-		

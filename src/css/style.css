@@ -3,55 +3,69 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding-bottom: 7%;
 }
+
 header {
-  background: linear-gradient(45deg,#043751 0%,#104f71 30%,#1c809d 80%,#1c809d 100%);
+  background: linear-gradient(45deg, #043751 0%, #104f71 30%, #1c809d 80%, #1c809d 100%);
   position: relative;
 }
+
 header .btn {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 0.72rem;
 }
+
 nav a {
   white-space: nowrap;
 }
+
 nav a span {
   display: inline;
 }
+
 nav a .fas, nav a .fab {
   margin-right: 0.3rem;
 }
+
 h1, h2 {
   color: rgb(49, 49, 49);
   margin-bottom: 0;
   font-weight: 300;
   padding: 2% 0;
 }
+
 h2, h3 {
   padding: 1% 0;
 }
+
 h1 {
   border-bottom: 1px solid rgb(240, 240, 243);
   border-top: 1px solid rgb(240, 240, 243);
   font-size: 2rem;
 }
+
 h2 {
   font-size: 1rem;
   font-weight: 600;
 }
+
 h3 {
-  font-size: 1rem;  
+  font-size: 1rem;
 }
+
 input, select {
   padding: 2%;
   width: 100%;
 }
+
 textarea {
   resize: none;
 }
+
 video {
-	height: 10vh;
+  height: 10vh;
 }
+
 *[readonly] {
   background: repeating-linear-gradient(45deg, #fff, #fff 10px, #f3f3f3 10px, #f3f3f3 20px);
   border: 1px solid rgb(169, 169, 169);
@@ -62,12 +76,14 @@ video {
   position: relative;
   z-index: 100;
 }
+
 .header-nav {
   animation: slideup 2s ease-out;
   bottom: 0;
   position: relative;
   z-index: 10;
 }
+
 .logo-container {
   bottom: -8px;
   color: white;
@@ -76,107 +92,134 @@ video {
   position: absolute;
   z-index: 100;
 }
+
 .campaign-options-container input {
   border-radius: 3px;
   border: 1px solid #b1b1b1;
 }
+
 .share-token {
   font-size: 0.6rem;
 }
+
 .groups .table {
   margin-bottom: 0;
 }
+
 .group {
   box-shadow: 0 20px 40px -25px grey;
   margin-bottom: 4%;
   padding-bottom: 4%;
 }
+
 .table td {
   border-top: 0;
   color: #818181;
   vertical-align: middle;
 }
+
 .campaign-container {
   background: white;
   padding-top: 1%;
   position: relative;
   z-index: 100;
 }
+
 .campaign-container table, .track input {
   font-size: 0.88rem;
 }
+
 .campaign-container table {
   background: #f4f4f4;
 }
+
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #f1f1f1;
 }
+
 .custom-campaign-xml-generator-heading {
   color: white;
   font-size: 1.2rem;
   font-weight: 300;
   margin-bottom: 0;
 }
+
 .video, .row-fallback-texture {
-	display: none;
+  display: none;
 }
+
 #groups {
   height: 50vh;
   width: 100%;
 }
+
 #campaign-xml {
   height: 80vh;
   width: 100%;
 }
+
 #campaign-name, #campaign-xml-filename, .event-name {
   width: 100%;
 }
+
 .track {
   width: 80%;
 }
+
 #templates {
   display: none;
 }
+
 .xml-container {
   position: fixed;
   font-size: 0.84rem;
   right: -100%;
 }
+
 .xml-container input, .xml-container textarea {
   border: 1px solid rgb(230, 230, 230);
 }
+
 .tooltip-inner {
   text-align: left;
 }
+
 .track button, .track input {
   float: left;
 }
+
 .btn-rm-track {
   border-radius: 0;
 }
+
 .btn-toggle-options {
   margin-top: -0.5%;
 }
+
 .popup-load, .popup-load h1, .popup-load h2, .popup-load h3 {
   border-bottom: 1px solid #292929;
   border-top: 1px solid #292929;
   color: white;
   padding-bottom: 0;
 }
+
 .popup-load p {
   font-size: 0.9rem;
   margin-bottom: 5vh;
 }
+
 .popup-load .row {
   margin: 0;
   width: 100%;
 }
+
 .popup-load {
   opacity: 1;
-  transition: opacity 0.25s ease-out; 
+  transition: opacity 0.25s ease-out;
 }
+
 .vignette-backdrop {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%,#000000 100%,#000000 100%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%, #000000 100%, #000000 100%);
   height: 100vh;
   left: 0;
   padding: 4%;
@@ -185,42 +228,52 @@ video {
   width: 100vw;
   z-index: 1000;
 }
+
 .btn-open-campaign {
   font-size: 0.9rem;
   margin-bottom: 2%;
   text-transform: uppercase;
 }
+
 .open-campaign-container div.tooltip-inner {
   max-width: none;
   white-space: nowrap;
 }
+
 .loading-campaign-templates-from-cloud {
   animation: spin 1.4s infinite linear;
   font-size: 1.4rem;
 }
+
 .sample-video {
-	display: inline;
-	position: relative;
-	margin-top: 0;
-	transition: margin-top .25s ease-out;
-	vertical-align: top;
+  display: inline;
+  position: relative;
+  margin-top: 0;
+  transition: margin-top .25s ease-out;
+  vertical-align: top;
 }
+
 .sample-video img {
-	height: 10vh;
+  height: 10vh;
 }
+
 .btn-add-event {
-	margin-top: 9vh;
+  margin-top: 9vh;
 }
+
 .btn-add-group-container {
   border: 1px dashed grey;
   padding: 1rem 0;
 }
+
 .campaign-container .track td:nth-child(2) {
   padding-right: 0;
 }
+
 .btn-toggle-all-options {
   margin-right: 0.6rem;
 }
+
 .bng-toasts {
   animation: pulsingGoldBg 4s infinite ease-out;
   background: #d09d0e;
@@ -245,6 +298,7 @@ video {
     right: 0%;
   }
 }
+
 @keyframes slideup {
   from {
     bottom: -3vh;
@@ -253,6 +307,7 @@ video {
     bottom: 0;
   }
 }
+
 @keyframes collapseUp {
   from {
     background: lightgrey;
@@ -263,19 +318,22 @@ video {
     max-height: 0px;
   }
 }
+
 @keyframes spin {
   100% {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+
 @keyframes fadeIn {
   0% {
-    opacity: 0; 
+    opacity: 0;
   }
   100% {
     opacity: 1;
   }
 }
+
 @keyframes pulsingGoldBg {
   0%, 75%, 100% {
     background: #f1bc27;

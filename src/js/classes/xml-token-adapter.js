@@ -12,15 +12,15 @@ class XmlTokenAdapter {
   static xmlToShareableToken(xml) {
     return btoa(escape(xml));
   }
-  
+
   static shareableTokenToXml(token) {
     return unescape(atob(token));
   }
-  
+
   static forceStrToUtf8(str) {
     return JSON.parse(JSON.stringify(str));
   }
-  
+
   static getUrlParam(param) {
     return new URL(window.location.href).searchParams.get(param);
   }

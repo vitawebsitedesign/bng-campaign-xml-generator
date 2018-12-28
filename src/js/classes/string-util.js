@@ -2,7 +2,7 @@ class StringUtil {
   static randomizeWebsiteColour() {
     const btnColour = this.getRandomColour();
     const headerGradient = `linear-gradient(45deg, #043751 0%, #104f71 30%, ${btnColour} 80%, ${btnColour} 100%)`;
-    $('.btn-primary').css({'background-color': btnColour, 'border-color': btnColour});
+    $('.btn-primary').css({ 'background-color': btnColour, 'border-color': btnColour });
     $('header').css('background', headerGradient);
   }
 

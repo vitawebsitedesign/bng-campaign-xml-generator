@@ -3,7 +3,7 @@ import CampaignList from './classes/campaign-list';
 import StringUtil from './classes/string-util';
 import XmlTokenAdapter from './classes/xml-token-adapter';
 
-(function() {
+(function () {
 	const mappingsUrl = 'https://gist.githubusercontent.com/vitawebsitedesign/8609996e29eec136b7658dd37f8448c2/raw/xml-html-mapping-metadata.json';
 	init();
 
@@ -13,92 +13,92 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		bindTooltips();
 	}
 
-  function showCampaigns() {
-    const campaigns = CampaignList.get();
-    $('.loading-campaign-templates-from-cloud').remove();
+	function showCampaigns() {
+		const campaigns = CampaignList.get();
+		$('.loading-campaign-templates-from-cloud').remove();
 
-    campaigns.forEach((c, campaignNum) => {
-	    if (!c.url || c.url.length === 0) {
-		console.warn(`Campaign ${campaignNum} doesnt have a url. Fix the json. This cmapaign will not show on the "open campaign" menu.`);
-	    	return;
+		campaigns.forEach((c, campaignNum) => {
+			if (!c.url || c.url.length === 0) {
+				console.warn(`Campaign ${campaignNum} doesnt have a url. Fix the json. This cmapaign will not show on the "open campaign" menu.`);
+				return;
 			}
 
-      const clone = $('#templates .btn-open-campaign').clone();
-      const host = getHostFromUrl(c.url);
-      const fadeIn = `fadeIn ${campaignNum * 0.25}s ease-out forwards`;
-      clone.text(c.name).attr('data-url', c.url);
-      clone.attr('title', `Template will be loaded from ${host}`);
-      clone.css('animation', fadeIn);
+			const clone = $('#templates .btn-open-campaign').clone();
+			const host = getHostFromUrl(c.url);
+			const fadeIn = `fadeIn ${campaignNum * 0.25}s ease-out forwards`;
+			clone.text(c.name).attr('data-url', c.url);
+			clone.attr('title', `Template will be loaded from ${host}`);
+			clone.css('animation', fadeIn);
 			clone.appendTo('.open-campaign-container');
-    });
+		});
 
-    $('.open-campaign-container .btn-open-campaign').on('click', loadCampaign);
-  }
-  
-  function loadCampaign() {
+		$('.open-campaign-container .btn-open-campaign').on('click', loadCampaign);
+	}
+
+	function loadCampaign() {
 		const dataUrl = $(this).attr('data-url');
 		$('.btn-open-campaign').attr('disabled', 'disabled').removeClass('btn-primary').addClass('btn-secondary');
 		$(this).text('fetching...');
-    $.get(dataUrl)
-      .done(async xml => await loadCampaignFromXmlAsync(xml))
-      .fail(console.error);
-  }
-	
+		$.get(dataUrl)
+			.done(async xml => await loadCampaignFromXmlAsync(xml))
+			.fail(console.error);
+	}
+
 	function loadCampaignFromXmlAsync(xml) {
 		return new Promise(resolve => {
 			resolve(loadCampaignFromXml(xml));
 		});
 	}
 
-  function loadCampaignFromXml(xml) {
+	function loadCampaignFromXml(xml) {
 		$('#campaign-xml').val(xml);
-    removeAllTooltips();
-    loadScreenTransitionPromise().then(switchToEditorMode, console.error);
+		removeAllTooltips();
+		loadScreenTransitionPromise().then(switchToEditorMode, console.error);
 	}
 
-  function loadScreenTransitionPromise() {
-    return new Promise(function(resolve, reject) {
-      const loadScreen = $('.popup-load');
-      if (!loadScreen) {
-        reject('Couldnt find load screen element');
-      }
-      
-      $('.xml-container').css('animation', 'resetoffset 2s ease-out forwards');
-      loadScreen.on('transitionend', event => {
-        if (event.originalEvent.propertyName === 'opacity') {
-					loadScreen.remove();
-          resolve();
-        }
-      });
+	function loadScreenTransitionPromise() {
+		return new Promise(function (resolve, reject) {
+			const loadScreen = $('.popup-load');
+			if (!loadScreen) {
+				reject('Couldnt find load screen element');
+			}
 
-      loadScreen.css('opacity', 0);
-    });
-  }
-  
-  function switchToEditorMode() {
-    setCampaignXmlHeight();
+			$('.xml-container').css('animation', 'resetoffset 2s ease-out forwards');
+			loadScreen.on('transitionend', event => {
+				if (event.originalEvent.propertyName === 'opacity') {
+					loadScreen.remove();
+					resolve();
+				}
+			});
+
+			loadScreen.css('opacity', 0);
+		});
+	}
+
+	function switchToEditorMode() {
+		setCampaignXmlHeight();
 		addHtmlFieldsForXmlPromise().then(addHtmlFieldsForXmlHook);
 	}
 
-  function share() {
-    const xml = $('#campaign-xml').val();
-    const shareUrl = XmlTokenAdapter.getShareUrl(xml);
-    $('.share-token').val(shareUrl);
-  }
+	function share() {
+		const xml = $('#campaign-xml').val();
+		const shareUrl = XmlTokenAdapter.getShareUrl(xml);
+		$('.share-token').val(shareUrl);
+	}
 
-  function addHtmlFieldsForXmlPromise() {
+	function addHtmlFieldsForXmlPromise() {
 		return new Promise((resolve, reject) => {
 			const xmlStr = $('#campaign-xml').val();
 			const xml = BngCampaignXmlParser.convertBngCampaignXmlToXmlDoc(xmlStr);
 
 			$.get(mappingsUrl).done(mappingsStr => {
-					const mappings = JSON.parse(mappingsStr);
-					BngCampaignXmlParser.setHtmlFieldsForXml(addGroup, addEvent, addTrack, mappings, xml);
-					resolve();
+				const mappings = JSON.parse(mappingsStr);
+				BngCampaignXmlParser.setHtmlFieldsForXml(addGroup, addEvent, addTrack, mappings, xml);
+				resolve();
 			}).fail(reject);
 		});
 	}
-	
+
 	function addHtmlFieldsForXmlHook() {
 		updateAutoGeneratedHtmlFields();
 		rebindControlHandlers();
@@ -110,7 +110,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		const groupNum = $('.campaign-container .group').length;
 		const groupNumEle = group.find('.group-num');
 		const groupLetter = String.fromCharCode(97 + groupNum).toUpperCase();
-		
+
 		if (!groupNumEle.length) {
 			console.warn('Tried to show event number for a non-existent event (is the group number selector correct?)');
 		}
@@ -119,7 +119,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$('.campaign-container .groups').append(group);
 		htmlChangedHook(shouldGenerateXml, shouldRebindControlHandlers);
 	}
-  
+
 	function addTrack(tbody, shouldGenerateXml = true, shouldRemoveDeleteButton = false, shouldRebindControlHandlers = true) {
 		if (!tbody) {
 			console.warn('Tried to add track to a non-existent table body (is the tbody selector correct?)');
@@ -134,7 +134,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		clone.appendTo(tbody);
 		htmlChangedHook(shouldGenerateXml, shouldRebindControlHandlers);
 	}
-  
+
 	function addEvent(btnEle, groupEle, shouldGenerateXml = true, shouldRebindControlHandlers = true) {
 		const clone = $('#templates .event').first().clone();
 		const newEventNum = $(this).closest('.group').find('.event').length + 1;
@@ -160,9 +160,9 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		if (shouldRebindControlHandlers === true) {
 			rebindControlHandlers();
 		}
-    if (shouldGenerateXml) {
-      generateXml(); 
-    }
+		if (shouldGenerateXml) {
+			generateXml();
+		}
 	}
 
 	function removeEventGroup() {
@@ -188,28 +188,28 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		removeAllTooltips();
 		generateXml();
 	}
-  
-  function updateAutoGeneratedHtmlFields() {
-    const campaignName = $('#campaign-name').val();
-    const campaignNameSlugified = StringUtil.slugify(campaignName);
+
+	function updateAutoGeneratedHtmlFields() {
+		const campaignName = $('#campaign-name').val();
+		const campaignNameSlugified = StringUtil.slugify(campaignName);
 		setCampaignFilename(campaignNameSlugified);
 		setFallbackTextureFilename(campaignNameSlugified);
-    updateEventTitles();
-  }
-  
-  function getHostFromUrl(url) {
-    var parser = document.createElement('a');
-    parser.href = url;
-    return parser.hostname;
-  }
+		updateEventTitles();
+	}
+
+	function getHostFromUrl(url) {
+		var parser = document.createElement('a');
+		parser.href = url;
+		return parser.hostname;
+	}
 
 	function bindStaticElementHandlers() {
 		$('.btn-share').on('click', share);
 		$('.btn-randomize-website-colour').on('click', () => StringUtil.randomizeWebsiteColour());
 		$('#campaign-xml, .video, .fallback-texture, .share-token').on('click', selectAll);
 
-    $('.load-raw-xml').on('paste', async function(e) {
-			
+		$('.load-raw-xml').on('paste', async function (e) {
+
 			const xml = e.originalEvent.clipboardData.getData('text');
 			if (BngCampaignXmlParser.validXml(xml)) {
 				await loadCampaignFromXmlAsync(xml);
@@ -217,7 +217,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 			} else {
 				alert('this is invalid xml - check it carefully for syntax errors and please come again');
 			}
-    });
+		});
 	}
 
 	function showXmlCleanupToast() {
@@ -258,9 +258,9 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 	}
 
 	function rebindControlHandlers() {
-    const campaignOptsContainer = '.campaign-container';
+		const campaignOptsContainer = '.campaign-container';
 
-    $(`${campaignOptsContainer} select`).off('change').on('change', generateXml);
+		$(`${campaignOptsContainer} select`).off('change').on('change', generateXml);
 		$(`${campaignOptsContainer} input`).off('keyup change').on('keyup change', generateXml);
 		$(`${campaignOptsContainer} .btn-toggle-options`).off('click').on('click', toggleOpts);
 		$(`${campaignOptsContainer} .btn-toggle-all-options`).off('click').on('click', toggleAllOpts);
@@ -274,7 +274,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultGamemodeAwardValues);
 
 		$(`${campaignOptsContainer} .track`).off('focusin').on('focusin', recordLastTrackValue);
-		$(`${campaignOptsContainer} .track`).off('change').on('change', function(event) {
+		$(`${campaignOptsContainer} .track`).off('change').on('change', function (event) {
 			const tbody = $(this).closest('.event').find('.tracks tbody');
 			addTrack(tbody, true, false, true);
 		});
@@ -302,7 +302,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 	}
 
 	function updateEventTitles() {
-		$('.campaign-container .event-name').each(function(i) {
+		$('.campaign-container .event-name').each(function (i) {
 			const title = $(this).val();
 			$(this).closest('.event').find('.event-name-title').text(title);
 		});
@@ -310,35 +310,35 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 	function generateXml() {
 		hideXmlCleanupToast();
-		updateAutoGeneratedHtmlFields(); 
+		updateAutoGeneratedHtmlFields();
 		$('#campaign-xml').val(getXmlForCampaign());
 	}
 
-  function setDefaultGamemodeAwardValues() {
-    const awardSelectors = [
-      '.bronze-value',
-      '.silver-value',
-      '.gold-value',
-      '.platinum-value',
-    ];
-	  
-    $.get(mappingsUrl).done(mappingsStr => {
-        const mappings = JSON.parse(mappingsStr);
+	function setDefaultGamemodeAwardValues() {
+		const awardSelectors = [
+			'.bronze-value',
+			'.silver-value',
+			'.gold-value',
+			'.platinum-value',
+		];
 
-	    const awardMaps = mappings.filter(m => awardSelectors.indexOf(m.html.selector.toLowerCase()) !== -1);
-	    // get gamemode
-	    const gamemodeLower = $(this).val().toLowerCase();
+		$.get(mappingsUrl).done(mappingsStr => {
+			const mappings = JSON.parse(mappingsStr);
 
-	    // for bronze, silver, gold, platinum
-	    awardSelectors.forEach(awardSelector => {
-	      // get award value for current gamemode
-	      const awardMapping = awardMaps.filter(m => m.html.selector.toLowerCase() === awardSelector)[0];
-	      const awardThreshold = awardMapping.html.val[gamemodeLower];
-	      // set field
-	      $(this).closest('.event').find(awardSelector).val(awardThreshold);
-	    });
-    });
-  }
+			const awardMaps = mappings.filter(m => awardSelectors.indexOf(m.html.selector.toLowerCase()) !== -1);
+			// get gamemode
+			const gamemodeLower = $(this).val().toLowerCase();
+
+			// for bronze, silver, gold, platinum
+			awardSelectors.forEach(awardSelector => {
+				// get award value for current gamemode
+				const awardMapping = awardMaps.filter(m => m.html.selector.toLowerCase() === awardSelector)[0];
+				const awardThreshold = awardMapping.html.val[gamemodeLower];
+				// set field
+				$(this).closest('.event').find(awardSelector).val(awardThreshold);
+			});
+		});
+	}
 
 	function getXmlForEvents(groupEle) {
 		var eventCollection = $(groupEle).find('.event');
@@ -352,7 +352,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		const barracudaAllowed = $('.barracuda-allowed').val();
 		const video = $('.video').val();
 		const fallbackTexture = $('.fallback-texture').val();
-	return `<Settings Name="${name}" BarracudaAllowed="${barracudaAllowed}" Video="${video}" FallbackTexture="${fallbackTexture}" />
+		return `<Settings Name="${name}" BarracudaAllowed="${barracudaAllowed}" Video="${video}" FallbackTexture="${fallbackTexture}" />
 	${groups}
 		`;
 	}
@@ -431,14 +431,14 @@ ${xmlForEvents}
 		$(this).select();
 	}
 
-  function setCampaignXmlHeight() {
-    const paddingBottom = parseFloat($('body').css('padding-bottom'));
-    const height = $('iframe').height() - $('header').height() - paddingBottom;
-    const heightPx = `${height}px`;
-    $('#campaign-xml').css('height', heightPx);
-  }
-  
-  function removeAllTooltips() {
-    $('.tooltip').remove();
-  }
+	function setCampaignXmlHeight() {
+		const paddingBottom = parseFloat($('body').css('padding-bottom'));
+		const height = $('iframe').height() - $('header').height() - paddingBottom;
+		const heightPx = `${height}px`;
+		$('#campaign-xml').css('height', heightPx);
+	}
+
+	function removeAllTooltips() {
+		$('.tooltip').remove();
+	}
 })();
