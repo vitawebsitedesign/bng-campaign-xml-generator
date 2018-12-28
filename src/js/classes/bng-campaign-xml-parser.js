@@ -1,8 +1,20 @@
 class BngCampaignXmlParser {
-    static convertBngCampaignXmlToXmlDoc(str) {
+    static validXml(xml) {
+        return this
+            .convertBngCampaignXmlToXmlDoc(xml)
+            .documentElement
+            .getElementsByTagName('parsererror')
+            .length === 0;
+    }
+
+    static convertBngCampaignXmlToXmlDoc(xml) {
         const parser = new DOMParser();
-        const wellFormedXmlStr = `<root>${str}</root>`;
+        const wellFormedXmlStr = this.convertBngXmlToWellFormed(xml);
         return parser.parseFromString(wellFormedXmlStr, 'text/xml');
+    }
+
+    static convertBngXmlToWellFormed(xml) {
+        return `<root>${xml}</root>`;
     }
 
     static setHtmlFieldsForXml(addGroup, addEvent, addTrack, mappings, xml) {
@@ -18,6 +30,7 @@ class BngCampaignXmlParser {
         // For ea event childnode
         const eventTags = groupTag.getElementsByTagName('Event');
         for (let eventTag of eventTags) {
+          // Add event
           const latestGroupEle = $('.campaign-container .group').last();
           addEvent(null, latestGroupEle, false, false);
 
@@ -33,13 +46,11 @@ class BngCampaignXmlParser {
           const awardsTag = eventTag.getElementsByTagName('Awards')[0];
           const awards = this.getSelectorValuesMapForTag(mappings, xml, 'Awards', awardsTag);
           this.setHtmlFieldsForMap('.event', awards);
-          // Apply Mode/Modifiers/Ai
+          // Apply Mode/Modifiers/Ai etc
           const eventSettingsTag = eventTag.getElementsByTagName('EventSettings')[0];
-
           const modeTag = eventSettingsTag.getElementsByTagName('Mode')[0];
           const modifiersTag = eventSettingsTag.getElementsByTagName('Modifiers')[0];
           const aiTag = eventSettingsTag.getElementsByTagName('Ai')[0];
-
           const mode = this.getSelectorValuesMapForTag(mappings, xml, 'Mode', modeTag);
           const modifiers = this.getSelectorValuesMapForTag(mappings, xml, 'Modifiers', modifiersTag);
           const ai = this.getSelectorValuesMapForTag(mappings, xml, 'Ai', aiTag);
@@ -50,10 +61,9 @@ class BngCampaignXmlParser {
           // For ea track childnode
           const levelTags = eventSettingsTag.getElementsByTagName('Level');
           for (let levelTag of levelTags) {
+              // Apply track name
             const tBody = $('.campaign-container .tracks tbody').last();
-
             addTrack(tBody, false, false, false);
-            // Apply track name
             const level = this.getSelectorValuesMapForTag(mappings, xml, 'Level', levelTag);
             this.setHtmlFieldsForMap('.event', level);
           }
