@@ -267,6 +267,9 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 		$(`${campaignOptsContainer} select`).off('change').on('change', generateXml);
 		$(`${campaignOptsContainer} input`).off('keyup change').on('keyup change', generateXml);
+
+		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultAwardValsBeforeGeneratingXml);
+
 		$(`${campaignOptsContainer} .btn-toggle-options`).off('click').on('click', toggleOpts);
 		$(`${campaignOptsContainer} .btn-toggle-all-options`).off('click').on('click', toggleAllOpts);
 		$(`${campaignOptsContainer} .btn-hide-options`).off('click').on('click', toggleAllOpts);
@@ -276,7 +279,6 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$(`${campaignOptsContainer} .btn-rm-event-group`).off('click').on('click', removeEventGroup);
 		$(`${campaignOptsContainer} .btn-rm-event`).off('click').on('click', removeEvent);
 		$(`${campaignOptsContainer} .btn-rm-track`).off('click').on('click', removeTrack);
-		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultGamemodeAwardValues);
 
 		$(`${campaignOptsContainer} .track`).off('focusin').on('focusin', recordLastTrackValue);
 		$(`${campaignOptsContainer} .track`).off('change').on('change', function (event) {
@@ -321,7 +323,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$('#campaign-xml').val(getXmlForCampaign());
 	}
 
-	function setDefaultGamemodeAwardValues() {
+	function setDefaultAwardValsBeforeGeneratingXml() {
 		const awardSelectors = [
 			'.bronze-value',
 			'.silver-value',
@@ -341,6 +343,8 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 				const awardThreshold = awardMapping.html.val[gamemodeLower];
 				$(this).closest('.event').find(awardSelector).val(awardThreshold);
 			});
+
+			generateXml();
 		});
 	}
 
