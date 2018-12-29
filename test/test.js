@@ -25,18 +25,8 @@ describe('bng campaign xml generator', function () {
     });
 
     it('should be able to load "BNGT" template', async () => {
-      const xml = await canLoadXmlFromRemoteTemplatePromise('ballisticng gt (bngt)');
+      const xml = await canLoadXmlFromRemoteTemplatePromise('[radracer] Ballisticng gt (bngt)');
       expect(xml.length).to.equal(16355);
-    });
-
-    it('should be able to load "Enai" template', async () => {
-      const xml = await canLoadXmlFromRemoteTemplatePromise('enai example');
-      expect(xml.length).to.equal(1937);
-    });
-
-    it('should be able to load "kyra/evy/victor/shroom" template', async () => {
-      const xml = await canLoadXmlFromRemoteTemplatePromise('kyra/evy/victor/shroom example');
-      expect(xml.length).to.equal(2504);
     });
 
     it('should be able to load "wipeout64 race challenges" template', async () => {
