@@ -267,6 +267,9 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 		$(`${campaignOptsContainer} select`).off('change').on('change', generateXml);
 		$(`${campaignOptsContainer} input`).off('keyup change').on('keyup change', generateXml);
+
+		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultAwardValsBeforeGeneratingXml);
+
 		$(`${campaignOptsContainer} .btn-toggle-options`).off('click').on('click', toggleOpts);
 		$(`${campaignOptsContainer} .btn-toggle-all-options`).off('click').on('click', toggleAllOpts);
 		$(`${campaignOptsContainer} .btn-hide-options`).off('click').on('click', toggleAllOpts);
@@ -276,12 +279,13 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$(`${campaignOptsContainer} .btn-rm-event-group`).off('click').on('click', removeEventGroup);
 		$(`${campaignOptsContainer} .btn-rm-event`).off('click').on('click', removeEvent);
 		$(`${campaignOptsContainer} .btn-rm-track`).off('click').on('click', removeTrack);
-		$(`${campaignOptsContainer} .game-mode`).off('change').on('change', setDefaultGamemodeAwardValues);
 
 		$(`${campaignOptsContainer} .track`).off('focusin').on('focusin', recordLastTrackValue);
 		$(`${campaignOptsContainer} .track`).off('change').on('change', function (event) {
-			const tbody = $(this).closest('.event').find('.tracks tbody');
-			addTrack(tbody, true, false, true);
+			if ($(this).val().trim().length) {
+				const tbody = $(this).closest('.event').find('.tracks tbody');
+				addTrack(tbody, true, false, true);
+			}
 		});
 
 		removeAllTooltips();
@@ -319,36 +323,36 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 		$('#campaign-xml').val(getXmlForCampaign());
 	}
 
-	function setDefaultGamemodeAwardValues() {
+	function setDefaultAwardValsBeforeGeneratingXml() {
 		const awardSelectors = [
 			'.bronze-value',
 			'.silver-value',
 			'.gold-value',
 			'.platinum-value',
+			'.easy-score',
+			'.hard-score'
 		];
 
 		$.get(mappingsUrl).done(mappingsStr => {
 			const mappings = JSON.parse(mappingsStr);
-
 			const awardMaps = mappings.filter(m => awardSelectors.indexOf(m.html.selector.toLowerCase()) !== -1);
-			// get gamemode
 			const gamemodeLower = $(this).val().toLowerCase();
 
-			// for bronze, silver, gold, platinum
 			awardSelectors.forEach(awardSelector => {
-				// get award value for current gamemode
 				const awardMapping = awardMaps.filter(m => m.html.selector.toLowerCase() === awardSelector)[0];
 				const awardThreshold = awardMapping.html.val[gamemodeLower];
-				// set field
 				$(this).closest('.event').find(awardSelector).val(awardThreshold);
 			});
+
+			generateXml();
 		});
 	}
 
 	function getXmlForEvents(groupEle) {
 		var eventCollection = $(groupEle).find('.event');
 		var events = [...eventCollection];
-		return events.map(getXmlForEvent).toString().replace(/,/g, '');
+		const eventsXmlArray = events.map(getXmlForEvent);
+		return arrayToStringWithoutCommas(eventsXmlArray);
 	}
 
 	function getXmlForCampaign() {
@@ -364,7 +368,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 	function getXmlForGroups() {
 		const groups = [...$('.campaign-container .group')];
-		return groups.map(groupEle => {
+		const xmlForGroupsArray = groups.map(groupEle => {
 			const pointsToUnlock = $(groupEle).find('.points-to-unlock').val();
 			const xmlForEvents = getXmlForEvents(groupEle);
 			return `
@@ -373,6 +377,12 @@ ${xmlForEvents}
 </Group>
 			`;
 		});
+
+		return arrayToStringWithoutCommas(xmlForGroupsArray);
+	}
+
+	function arrayToStringWithoutCommas(arr) {
+		return arr.toString().replace(/,/g, '');
 	}
 
 	function getXmlForEvent(eventEle) {

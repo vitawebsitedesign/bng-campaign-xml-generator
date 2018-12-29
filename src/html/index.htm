@@ -122,7 +122,7 @@
           <i class="fas fa-cog"></i>
           Intermediate options
           <button class="float-right btn btn-sm btn-primary btn-toggle-options" data-toggle="tooltip" data-placement="bottom"
-            title="hide/show section"><i class="fas fa-minus fa-fw"></i></button>
+            title="hide/show section. You can leave these intermediate options as-is though"><i class="fas fa-minus fa-fw"></i></button>
         </h3>
         <div class="toggleable-item" style="display: none">
           <table class="table table-striped">
@@ -164,7 +164,7 @@
                   Easy score
                 </td>
                 <td data-toggle="tooltip" data-placement="bottom" title="Only applicable for Eliminator events. This is the target score when playing on easy difficulty. This should be equal to the gold medal threshold.">
-                  <input type="number" class="easy-score" value="1" min="0" />
+                  <input type="number" class="easy-score" min="0" />
                 </td>
               </tr>
               <tr>
@@ -172,7 +172,7 @@
                   Hard score
                 </td>
                 <td data-toggle="tooltip" data-placement="bottom" title="Only applicable for Eliminator events. This is the target score when playing on hard difficulty. This should be equal to the platinum medal threshold.">
-                  <input type="number" class="hard-score" value="1" min="0" />
+                  <input type="number" class="hard-score" min="0" />
                 </td>
               </tr>
             </tbody>
@@ -301,7 +301,7 @@
               </tr>
               <tr>
                 <td>
-                  Forced ship (only used if 1 of the above 2 options are set to &quot;Yes&quot;)
+                  Forced ship (only applies to the 2 above options which are set to &quot;Yes&quot;)
                 </td>
                 <td data-toggle="tooltip" data-placement="bottom" title="What ships the player can select for this event">
                   <select class="player-ship">
@@ -513,7 +513,7 @@
         Campaign XML Generator
       </h3>
       <nav class="col-12 header-nav">
-        <a href="https://ballisticng.gamepedia.com/Custom_Campaign_XML#content_references" target="_blank">
+        <a href="https://ballisticng.gamepedia.com/Custom_Campaign_XML#troubleshooting" target="_blank">
           <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Opens the XML wiki page in a new tab">
             <i class="fas fa-question"></i>Help
           </button>

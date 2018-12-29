@@ -25,8 +25,13 @@ describe('bng campaign xml generator', function () {
     });
 
     it('should be able to load "BNGT" template', async () => {
-      const xml = await canLoadXmlFromRemoteTemplatePromise('[radracer] Ballisticng gt (bngt)');
+      const xml = await canLoadXmlFromRemoteTemplatePromise('[by radracer] ballisticng gt (bngt)');
       expect(xml.length).to.equal(16355);
+    });
+
+    it('should be able to load "enai + kyratech" template', async () => {
+      const xml = await canLoadXmlFromRemoteTemplatePromise('[enai+kyratech] campaign');
+      expect(xml.length).to.equal(7217);
     });
 
     it('should be able to load "wipeout64 race challenges" template', async () => {
