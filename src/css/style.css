@@ -78,8 +78,7 @@ video {
 }
 
 .header-nav {
-  animation: slideup 2s ease-out;
-  bottom: 0;
+  bottom: -3vh;
   position: relative;
   z-index: 10;
 }

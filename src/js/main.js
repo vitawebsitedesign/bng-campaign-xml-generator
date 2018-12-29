@@ -77,7 +77,12 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 	function switchToEditorMode() {
 		setCampaignXmlHeight();
+		showHelperButtons();
 		addHtmlFieldsForXmlPromise().then(addHtmlFieldsForXmlHook);
+	}
+
+	function showHelperButtons() {
+		$('.header-nav').css('animation', 'slideup 2s ease-out forwards');
 	}
 
 	function share() {

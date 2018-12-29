@@ -6,16 +6,8 @@ class CampaignList {
 				"url": "https://gist.githubusercontent.com/vitawebsitedesign/59a3a0c815c0fcfa07e6ae2c664464a9/raw/new-campaign.xml"
 			},
 			{
-				"name": "ballisticng gt (bngt)",
+				"name": "[radracer] Ballisticng gt (bngt)",
 				"url": "https://gist.githubusercontent.com/vitawebsitedesign/f54d7017142bcc1adce0bdeb0bb6dd0f/raw/bngt.xml"
-			},
-			{
-				"name": "enai example",
-				"url": "https://gist.githubusercontent.com/vitawebsitedesign/c2e12177bc7260649803aebf0dde93f0/raw/enai.xml"
-			},
-			{
-				"name": "kyra/evy/victor/shroom example",
-				"url": "https://gist.githubusercontent.com/vitawebsitedesign/ae3167040e552a749d1556baae3247e2/raw/kevs.xml"
 			},
 			{
 				"name": "wipeout64 race challenges",

@@ -62,7 +62,7 @@
             title="hide/show section"><i class="fas fa-minus fa-fw"></i></button>
         </h3>
         <div class="toggleable-item-container">
-          <div class="toggleable-item" style="display: none">
+          <div class="toggleable-item">
             <table class="table table-striped">
               <tbody>
                 <tr>
@@ -71,6 +71,14 @@
                   </td>
                   <td data-toggle="tooltip" data-placement="bottom" title="The event name appears as a list item when viewing this custom campaign">
                     <input type="text" class="event-name" placeholder="Event name" value="Event 1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Game mode
+                  </td>
+                  <td data-toggle="tooltip" data-placement="bottom" title="Changing this will automatically update the award thresholds (see intermediate options below)">
+                    <input type="text" list="datalist-gamemodes" placeholder="Gamemode case-sensitive, e.g.: Race" class="game-mode" />
                   </td>
                 </tr>
                 <tr>
@@ -99,15 +107,6 @@
                       <option value="Elite" selected>Elite</option>
                       <option value="Hardcore">Hardcore</option>
                     </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Game mode
-                  </td>
-                  <td data-toggle="tooltip" data-placement="bottom" title="Changing this will automatically update the award thresholds (see intermediate options below)">
-                    <input type="text" list="datalist-gamemodes" placeholder="Gamemode case-sensitive, e.g.: Race"
-                      class="game-mode" />
                   </td>
                 </tr>
               </tbody>
@@ -350,7 +349,7 @@
         <tr class="track-row">
           <td>
             <input type="text" list="datalist-tracks" class="track" placeholder="New track" data-toggle="tooltip"
-              data-placement="bottom" title="Click to show track list (vanilla tracks will be listed at the top). You can also type in a custom track name (case-sensitive) if its not listed." />
+              data-placement="bottom" title="Click to show track list (vanilla tracks will be listed at the top). You can also type in a custom track name if its not listed. Custom track names need to be EXACTLY the same as the filename in your 'Custom Track Caches' folder (e.g.: the track name for 'GCN - Mushroom Bridge.tch' is 'GCN - Mushroom Bridge')" />
           </td>
           <td>
             <button class="float-right btn btn-danger btn-sm btn-rm-track" data-toggle="tooltip" data-placement="bottom"
@@ -381,58 +380,69 @@
         <option value="Arrivon Peak">Tested &amp; working</option>
 
         <!-- vanilla reverse tracks -->
-        <option value="Cassandra Reverse">Not tested yet</option>
-        <option value="Zephyr Ridge Reverse">Not tested yet</option>
-        <option value="Harpstone Reverse">Not tested yet</option>
-        <option value="Aciknovae Reverse">Not tested yet</option>
-        <option value="Nova Split Reverse">Not tested yet</option>
-        <option value="Luna Reverse">Not tested yet</option>
-        <option value="Dover Reverse">Not tested yet</option>
-        <option value="Ishtar Citadel Reverse">Not tested yet</option>
-        <option value="Arrivon XI Reverse">Not tested yet</option>
-        <option value="Omega Harbour Reverse">Not tested yet</option>
-        <option value="Utah Project Reverse">Not tested yet</option>
-        <option value="Marina Rush Reverse">Not tested yet</option>
-        <option value="Hydrome Bed Reverse">Not tested yet</option>
-        <option value="Arrivon Peak Reverse">Not tested yet</option>
+        <option value="Cassandra Reverse">Tested &amp; working</option>
+        <option value="Zephyr Ridge Reverse">Tested &amp; working</option>
+        <option value="Harpstone Reverse">Tested &amp; working</option>
+        <option value="Aciknovae Reverse">Tested &amp; working</option>
+        <option value="Nova Split Reverse">Tested &amp; working</option>
+        <option value="Luna Reverse">Tested &amp; working</option>
+        <option value="Dover Reverse">Tested &amp; working</option>
+        <option value="Ishtar Citadel Reverse">Tested &amp; working</option>
+        <option value="Arrivon XI Reverse">Tested &amp; working</option>
+        <option value="Omega Harbour Reverse">Tested &amp; working</option>
+        <option value="Utah Project Reverse">Tested &amp; working</option>
+        <option value="Marina Rush Reverse">Tested &amp; working</option>
+        <option value="Hydrome Bed Reverse">Tested &amp; working</option>
+        <option value="Arrivon Peak Reverse">Tested &amp; working</option>
 
         <!-- custom tracks-->
         <option value="Abisko">Tested &amp; working</option>
         <option value="Aerodive">Tested &amp; working</option>
         <option value="Annapurna">Tested &amp; working</option>
         <option value="Beltane">Tested &amp; working</option>
-        <option value="blood_moon">Unable to load</option>
+        <option value="Blood_Moon">Tested &amp; working</option>
         <option value="bngl-wipeoutzone">Tested &amp; working</option>
         <option value="BoneZone">Tested &amp; working</option>
         <option value="breolia cliffs">Tested &amp; working</option>
         <option value="Brigadoon">Tested &amp; working</option>
-        <option value="broadcasting base">Unable to load</option>
+        <option value="Broadcasting Base">Tested &amp; working</option>
         <option value="Cairodrome">Tested &amp; working</option>
         <option value="Cobbledark">Tested &amp; working</option>
         <option value="cobblerdark">Tested &amp; working</option>
         <option value="Dione IV">Tested &amp; working</option>
         <option value="Dyroness">Tested &amp; working</option>
+        <option value="Eschaton">Tested &amp; working</option>
         <option value="Faradome">Tested &amp; working</option>
         <option value="Fort Tristan Full">Tested &amp; working</option>
         <option value="Fort Tristan Short">Tested &amp; working</option>
-        <option value="gcn - mushroom bridge">Unable to load</option>
+        <option value="GCN - Mushroom Bridge">Tested &amp; working</option>
         <option value="Goldbridge">Tested &amp; working</option>
-        <option value="GT-Autumn Ring Mini">Not tested yet</option>
-        <option value="GT-Clubman Stage Route 5">Not tested yet</option>
-        <option value="GT-Deep Forest">Tested &amp; working</option>
-        <option value="GT-Deep Forest reverse">Not tested yet</option>
-        <option value="GT-Grand Valley East Section">Tested &amp; working</option>
-        <option value="GT-Grand Valley East Section Reverse">Not tested yet</option>
-        <option value="GT-Grand Valley Speedway">Tested &amp; working</option>
-        <option value="GT-Grand Valley Speedway Reverse">Not tested yet</option>
-        <option value="GT-High Speed Ring">Not tested yet</option>
-        <option value="GT-Special Stage Route 5">Tested &amp; working</option>
-        <option value="GT-Special Stage Route 11 GT1">Not tested yet</option>
-        <option value="GT-Special Stage Route 11 GT1 Reverse">Not tested yet</option>
-        <option value="GT-Trial Mountain">Not tested yet</option>
+        <option value="GT-Autumn Ring Mini Reverse">Tested & working</option>
+        <option value="GT-Autumn Ring Mini">Tested & working</option>
+        <option value="GT-Autumn Ring Reverse">Tested & working</option>
+        <option value="GT-Autumn Ring">Tested & working</option>
+        <option value="GT-Clubman Stage Route 5 Reverse">Tested & working</option>
+        <option value="GT-Clubman Stage Route 5">Tested & working</option>
+        <option value="GT-Deep Forest reverse">Tested & working</option>
+        <option value="GT-Deep Forest">Tested & working</option>
+        <option value="GT-Grand Valley East Section Reverse">Tested & working</option>
+        <option value="GT-Grand Valley East Section">Tested & working</option>
+        <option value="GT-Grand Valley Speedway Reverse">Tested & working</option>
+        <option value="GT-Grand Valley Speedway">Tested & working</option>
+        <option value="GT-High Speed Ring Reverse">Tested & working</option>
+        <option value="GT-High Speed Ring">Tested & working</option>
+        <option value="GT-Motorsport Land">Tested & working</option>
+        <option value="GT-Special Stage Route 11 GT1 Reverse">Tested & working</option>
+        <option value="GT-Special Stage Route 11 GT1">Tested & working</option>
+        <option value="GT-Special Stage Route 5 reverse">Tested & working</option>
+        <option value="GT-Special Stage Route 5">Tested & working</option>
+        <option value="GT-Special Stage Route X Short Course">Tested & working</option>
+        <option value="GT-Special Stage Route X">Tested & working</option>
+        <option value="GT-Trial Mountain Reverse">Tested & working</option>
+        <option value="GT-Trial Mountain">Tested & working</option>
         <option value="Harvest Bastion">Tested &amp; working</option>
         <option value="Infinity Spear">Tested &amp; working</option>
-        <option value="interlagos futuristic">Unable to load</option>
+        <option value="Interlagos Futuristic">Tested &amp; working</option>
         <option value="Kamanneq">Tested &amp; working</option>
         <option value="Kanlaon Peak">Tested &amp; working</option>
         <option value="Klies Bridge">Tested &amp; working</option>
@@ -440,13 +450,13 @@
         <option value="Machaon II">Tested &amp; working</option>
         <option value="M-Aero">Tested &amp; working</option>
         <option value="Mega Expressway">Tested &amp; working</option>
-        <option value="mountain sunset">Unable to load</option>
-        <option value="mtpisang">Unable to load</option>
-        <option value="mtpisang_night">Unable to load</option>
+        <option value="Mountain Sunset">Tested &amp; working</option>
+        <option value="MtPisang">Tested &amp; working</option>
+        <option value="MtPisang_Night">Tested &amp; working</option>
         <option value="New Broadcasting Base">Tested &amp; working</option>
         <option value="New Mountain Complex">Tested &amp; working</option>
         <option value="Nitia Descent">Tested &amp; working</option>
-        <option value="noob dimention">Unable to load</option>
+        <option value="NOOB Dimention">Tested &amp; working</option>
         <option value="Parashant">Tested &amp; working</option>
         <option value="Pont des Anges">Tested &amp; working</option>
         <option value="Qoron IV">Tested &amp; working</option>
@@ -457,7 +467,7 @@
         <option value="Saint Caomhan's Point">Tested &amp; working</option>
         <option value="Seaside Route 765 R">Tested &amp; working</option>
         <option value="Seaside Route 765">Tested &amp; working</option>
-        <option value="selvaverde">Unable to load</option>
+        <option value="Selvaverde">Tested &amp; working</option>
         <option value="Sokana">Tested &amp; working</option>
         <option value="sol 0">Tested &amp; working</option>
         <option value="Stearinlys">Tested &amp; working</option>
@@ -465,7 +475,7 @@
         <option value="Tamoanchan">Tested &amp; working</option>
         <option value="Ten Bears Point">Tested &amp; working</option>
         <option value="terafumos">Tested &amp; working</option>
-        <option value="utahcz">Unable to load</option>
+        <option value="UtahCZ">Tested &amp; working</option>
         <option value="Velocitar">Tested &amp; working</option>
         <option value="Vostrukha I">Tested &amp; working</option>
         <option value="Vulcan's Forge">Tested &amp; working</option>
@@ -475,11 +485,11 @@
 
       <datalist id="datalist-gamemodes">
         <option value="Race">Tested &amp; working</option>
-        <option value="Time Trial">Tested &amp; working</option>
-        <option value="Speed Lap">Tested &amp; working</option>
-        <option value="Survival">Tested &amp; working</option>
-        <option value="Knockout">Tested &amp; working</option>
-        <option value="Eliminator">Tested &amp; working</option>
+        <option value="Time Trial">Working but can only have 1 event per event group</option>
+        <option value="Speed Lap">Working but user can choose their own 2nd track after ending on 1st track</option>
+        <option value="Survival">Working but can only have 1 event per event group</option>
+        <option value="Knockout">Working but can only have 1 event per event group</option>
+        <option value="Eliminator">Working but can only have 1 event per event group</option>
       </datalist>
     </section>
 
