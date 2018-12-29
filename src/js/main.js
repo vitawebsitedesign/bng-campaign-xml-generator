@@ -327,21 +327,18 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 			'.silver-value',
 			'.gold-value',
 			'.platinum-value',
+			'.easy-score',
+			'.hard-score'
 		];
 
 		$.get(mappingsUrl).done(mappingsStr => {
 			const mappings = JSON.parse(mappingsStr);
-
 			const awardMaps = mappings.filter(m => awardSelectors.indexOf(m.html.selector.toLowerCase()) !== -1);
-			// get gamemode
 			const gamemodeLower = $(this).val().toLowerCase();
 
-			// for bronze, silver, gold, platinum
 			awardSelectors.forEach(awardSelector => {
-				// get award value for current gamemode
 				const awardMapping = awardMaps.filter(m => m.html.selector.toLowerCase() === awardSelector)[0];
 				const awardThreshold = awardMapping.html.val[gamemodeLower];
-				// set field
 				$(this).closest('.event').find(awardSelector).val(awardThreshold);
 			});
 		});
