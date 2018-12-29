@@ -280,8 +280,10 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 		$(`${campaignOptsContainer} .track`).off('focusin').on('focusin', recordLastTrackValue);
 		$(`${campaignOptsContainer} .track`).off('change').on('change', function (event) {
-			const tbody = $(this).closest('.event').find('.tracks tbody');
-			addTrack(tbody, true, false, true);
+			if ($(this).val().trim().length) {
+				const tbody = $(this).closest('.event').find('.tracks tbody');
+				addTrack(tbody, true, false, true);
+			}
 		});
 
 		removeAllTooltips();

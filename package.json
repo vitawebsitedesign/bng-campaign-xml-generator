@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha",
-    "webpack": "node node_modules/webpack/bin/webpack.js"
+    "webpack": "node node_modules/webpack/bin/webpack.js",
+    "mocha": "node node_modules/mocha/bin/mocha",
+    "test": "npm run webpack && npm run mocha"
   },
   "repository": {
     "type": "git",
