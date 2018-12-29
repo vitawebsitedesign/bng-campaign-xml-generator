@@ -348,7 +348,8 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 	function getXmlForEvents(groupEle) {
 		var eventCollection = $(groupEle).find('.event');
 		var events = [...eventCollection];
-		return events.map(getXmlForEvent).toString().replace(/,/g, '');
+		const eventsXmlArray = events.map(getXmlForEvent);
+		return arrayToStringWithoutCommas(eventsXmlArray);
 	}
 
 	function getXmlForCampaign() {
@@ -364,7 +365,7 @@ import XmlTokenAdapter from './classes/xml-token-adapter';
 
 	function getXmlForGroups() {
 		const groups = [...$('.campaign-container .group')];
-		return groups.map(groupEle => {
+		const xmlForGroupsArray = groups.map(groupEle => {
 			const pointsToUnlock = $(groupEle).find('.points-to-unlock').val();
 			const xmlForEvents = getXmlForEvents(groupEle);
 			return `
@@ -373,6 +374,12 @@ ${xmlForEvents}
 </Group>
 			`;
 		});
+
+		return arrayToStringWithoutCommas(xmlForGroupsArray);
+	}
+
+	function arrayToStringWithoutCommas(arr) {
+		return arr.toString().replace(/,/g, '');
 	}
 
 	function getXmlForEvent(eventEle) {
