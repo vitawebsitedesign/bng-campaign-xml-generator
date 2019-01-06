@@ -43,6 +43,11 @@ describe('bng campaign xml generator', function () {
       const xml = await canLoadXmlFromRemoteTemplatePromise('wipeout64 time trial challenges');
       expect(xml.length).to.equal(4561);
     });
+
+    it('should be able to load "wipeout64 casual races" template', async () => {
+      const xml = await canLoadXmlFromRemoteTemplatePromise('wipeout64 casual races');
+      expect(xml.length).to.equal(2374);
+    });
   });
 
   describe('loading raw xml', function () {
