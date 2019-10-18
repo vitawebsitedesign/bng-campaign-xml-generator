@@ -1,7 +1,7 @@
 ## About
 This is a real-time XML generator for BallisticNG custom campaigns, and is [hosted on CodePen](https://codepen.io/thinkfast2008/full/vvKKwq)
 
-## Usage overview
+## Usage
 Instead of writing raw XML text to generate BNG campaigns, users can now interact with a non-technical user interface to generate xml.
 
 Then users can save their xml to their computer & play the campaign in-game.
